@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom'
+import Board from './Board'
 
 // graphics
 import General from '../graphics/general.png'
@@ -22,7 +23,7 @@ const Boardlist = () => {
     return (
         <div>
             <div className="grid-container">
-                <Link style={linkStyles}>
+                <Link style={linkStyles} to="/board/">
                     <div>
                         <img src={General} className="img" alt="general"></img>
                         <h3>GENERAL</h3>
@@ -30,7 +31,7 @@ const Boardlist = () => {
                 </Link>
 
                 
-                <Link style={linkStyles}>
+                <Link style={linkStyles} to="/board/">
                     <div>
                         <img src={Esports} className="square-img" alt="esports"></img>
                         <h3>E-SPORTS</h3>
@@ -38,7 +39,7 @@ const Boardlist = () => {
                 </Link>
 
                 
-                <Link style={linkStyles}>
+                <Link style={linkStyles} to="/board/">
                     <div>
                         <img src={News} className="img" alt="news"></img>
                         <h3>NEWS</h3>
@@ -46,7 +47,7 @@ const Boardlist = () => {
                 </Link>
 
                 
-                <Link style={linkStyles}>
+                <Link style={linkStyles} to="/board/">
                     <div>
                         <img src={Social} className="img" alt="social"></img>
                         <h3>SOCIAL</h3>
@@ -54,7 +55,7 @@ const Boardlist = () => {
                 </Link>
 
                 
-                <Link style={linkStyles}>
+                <Link style={linkStyles} to="/board/">
                     <div>
                         <img src={Retro} className="img" alt="retro"></img>
                         <h3>RETRO</h3>
@@ -62,7 +63,7 @@ const Boardlist = () => {
                 </Link>
 
                 
-                <Link style={linkStyles}>
+                <Link style={linkStyles} to="/board/">
                     <div>
                         <img src={Tabletop} className="square-img" alt="tabletop"></img>
                         <h3>TABLETOP</h3>
@@ -70,7 +71,7 @@ const Boardlist = () => {
                 </Link>
 
                 
-                <Link style={linkStyles}>
+                <Link style={linkStyles} to="/board/">
                     <div>
                         <img src={Tech} className="img" alt="tech"></img>
                         <h3>TECH</h3>
@@ -78,7 +79,7 @@ const Boardlist = () => {
                 </Link>
 
                 
-                <Link style={linkStyles}>
+                <Link style={linkStyles} to="/board/">
                     <div>
                         <img src={Rigs} className="square-img" alt='rigs'></img>
                         <h3>RIGS</h3>
@@ -86,7 +87,7 @@ const Boardlist = () => {
                 </Link>
 
                 
-                <Link style={linkStyles}>
+                <Link style={linkStyles}> to="/board/"
                     <div>
                         <img src={Support} className="square-img" alt='support'></img>
                         <h3>SUPPORT</h3>
