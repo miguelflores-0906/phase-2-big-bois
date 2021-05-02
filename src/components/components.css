@@ -2,7 +2,8 @@
 
 .score {
     align-items: center;
-    margin: 11px 14px;
+    margin: auto 14px;
+    margin-top: -10px;
 }
 
 .score p {
@@ -50,8 +51,13 @@
     display: block;
     text-align: right;
     font-style: italic;
-    cursor: pointer;
     color: #535252
+}
+
+.reply {
+    font-size: 14px;
+    color: #535252;
+    font-style: italic;
 }
 
 .navbar {
@@ -181,5 +187,77 @@ nav {
 .grid-item {
     border: none;
     padding: 10px;
+    text-align: center;
+}
+
+.board-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+
+.new-post {
+    margin: auto 30px;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: #c4c4c4;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    font-size: 40px;
+    color: rgb(56, 55, 55);
+    padding-top: 5px;
+}
+
+.post-btn {
+    display: flex;
+    justify-content: space-around;
+    font-size: 14px;
+}
+
+
+/* TODO: preserving line breaks in the post because ux alternatively, we can tell them to just put <br> in their post LMAO */
+
+.board-post {
+    background-color: #c4c4c4;
+    padding: 25px;
+    padding-bottom: 15px;
+    overflow: none;
+    margin: 25px 70px;
+    box-shadow: 4px 4px 5px 1px rgba(0, 0, 0, 0.34);
+    white-space: pre;
+}
+
+.board-post p {
+    text-align: justify;
+    white-space: pre-line;
+}
+
+.title-input {
+    height: 68px;
+    width: 99%;
+    padding: 0 10px;
+    margin: auto;
+    margin-right: 10px;
+    font-size: 2em;
+}
+
+.post-body {
+    margin: 20px auto;
+    width: 99%;
+    padding: 0 10px;
+    padding-top: 10px;
+    font-size: 16px;
+}
+
+.submit-btn {
+    font-size: 16px;
+    padding: 5px;
+}
+
+.cancel-butt {
+    color: #535252;
+    /* font-style: underline; */
     text-align: center;
 }

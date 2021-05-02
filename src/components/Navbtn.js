@@ -12,7 +12,7 @@ const Navbtn = () => {
     return (
         <nav>
             <ul className="nav-links">
-                <Link style={navStyle} to="/board">
+                <Link style={navStyle} to="/dashboard">
                     <li>BOARDS</li>
                 </Link>
 
