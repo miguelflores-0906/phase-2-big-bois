@@ -63,15 +63,9 @@
     top: 0;
 }
 
-.navbar:hover {
-    overflow: scroll;
-    overflow-y:hidden;
-}
-
 .logo {
     color: white;
     font-family: 'Press Start 2P', cursive;
-    cursor: pointer;
     font-size: 25px;
     margin: auto;
     margin-left: -5px;
@@ -87,21 +81,25 @@
     margin: auto;
 }
 
-.navbutt {
+nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     user-select: none;
+    color: white;
+    font-size: 24px;
+    align-items: center;
 }
 
-.navbutt a {
-    color: white;
-    max-width: 136px;
-    max-height: 70px;
+.nav-links {
+    width: 50%;
     display: flex;
-    justify-content: space-between;
-    font-size: 24px;
-    cursor: pointer;
-    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 20px;
 }
 
 .btndiv:hover {
@@ -113,6 +111,75 @@
     margin: 10px;
 }
 
-::-webkit-scrollbar {
-    /* display: none; */
+.profile {
+    margin: 60px auto;
+}
+
+#profpic{
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.userName{
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+    height: 76px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 72px;
+    align-items: center;
+
+    color: #000000;
+
+    justify-content: space-between;
+
+}
+
+.board-name {
+    font-style: bold;
+    font-size: 50px;
+    text-align: center;
+    margin: 15px auto;
+}
+
+.nav-style {
+    color: white;
+    text-decoration: none;
+}
+
+.img {
+    height: 150px;
+    width: 200px;
+}
+
+.square-img {
+    height: 150px;
+    width: 150px;
+}
+
+.supp-img {
+    height: 100px;
+    width: 100px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    font-size: 22px;
+}
+
+.grid-item {
+    border: none;
+    padding: 10px;
+    text-align: center;
 }

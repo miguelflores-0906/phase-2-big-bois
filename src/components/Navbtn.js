@@ -1,20 +1,30 @@
 import React from 'react'
+import { VscWhitespace } from 'react-icons/vsc'
+import {Link} from 'react-router-dom'
 
 const Navbtn = () => {
+
+    const navStyle = {
+        color: 'white',
+        textDecoration: 'none',
+    }
+
     return (
-        <div className="navbutt">
-            <div className="btndiv">
-                <a>BOARDS</a>
-            </div>
+        <nav>
+            <ul className="nav-links">
+                <Link style={navStyle} to="/board">
+                    <li>BOARDS</li>
+                </Link>
 
-            <div className="btndiv">
-                <a>PROFILE</a>
-            </div>
+                <Link style={navStyle} to="/profile">
+                    <li>PROFILE</li>
+                </Link>
 
-            <div className="btndiv">
-                <a>LOGOUT</a>
-            </div>
-        </div>
+                <Link style={navStyle} to ="/">
+                    <li>LOGOUT</li>
+                </Link>
+            </ul>
+        </nav>
     )
 }
 
