@@ -20,7 +20,7 @@ const Navbtn = () => {
                     <li>PROFILE</li>
                 </Link>
 
-                <Link style={navStyle} to ="/">
+                <Link style={navStyle} to ="/login">
                     <li>LOGOUT</li>
                 </Link>
             </ul>
