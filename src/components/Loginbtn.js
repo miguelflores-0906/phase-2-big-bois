@@ -32,11 +32,7 @@ function Loginbtn() {
                 <div
                     className={toggleState === 1 ? "content  active-content" : "content"}>
                     <p className = "errormsg"></p>
-
                     <form method="post" action="/login">
-
-                    
-
                     username 
                     <br></br>
                     <input type="text" className="login-form" id = "loguser"></input> 
@@ -51,9 +47,7 @@ function Loginbtn() {
                         <button id = "login-button">Log In</button>
                     </Link>
                     <br></br>
-
                     </form>
-
 
                 </div>
 
@@ -61,10 +55,7 @@ function Loginbtn() {
                     className={toggleState === 2 ? "content  active-content" : "content"}>
                     
                     <p className = "errormsg"></p>
-
                     <form method="post" action="/register">
-
-
                     username 
                     <br></br>
                     <input type="text" className="login-form" id = "loguser"></input> 
@@ -83,10 +74,7 @@ function Loginbtn() {
                     <button id = "login-button">Register</button>
                     </Link>
                     <br></br>
-
                     </form>
-
-
                 </div>
             </div>
         </div>
