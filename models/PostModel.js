@@ -1,20 +1,15 @@
 var mongoose = require("mongoose");
 
-var UserSchema = new mongoose.Schema(
+var PostSchema = new mongoose.Schema(
 {
-    username: 
+    poster_id:
     {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId, ref: "User",
         required: true
     },
-    password: 
+    text:
     {
         type: String,
-        required: true
-    },
-    gscore:
-    {
-        type:Number,
         required: true
     }
 });
