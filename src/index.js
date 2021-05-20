@@ -4,6 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// const db = require("./models/db.js");
+// db();
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

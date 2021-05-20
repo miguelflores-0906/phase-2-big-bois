@@ -1,6 +1,12 @@
 const mongoose = require("mongoose");
 const User = require("./UserModel.js");
-const url = "mongodb://localhost:27017/ccapdev-mp";
+const url = "mongodb+srv://dbuser:1234@ccapdev-mp.laqcf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+
+// const connectDB = async ()=>
+// {
+//     await mongoose.connect(url);
+//     console.log("db connected");
+// }
 
 const options = {
     useUnifiedTopology: true,
