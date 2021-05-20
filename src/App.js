@@ -15,10 +15,17 @@ function App() {
   return (
     <Router>
       <div>
+<<<<<<< HEAD
         
         {/* <Postpage /> */}
         <Switch>
           <Route path="/newpost" exact component ={Newpost}/>
+=======
+        <Navbar />
+        {/* <Postpage /> */}
+        <Switch>
+          <Route path="/" exact component ={Newpost}/>
+>>>>>>> parent of 822a359 (Merge branch 'master' into DyDB)
           <Route path="/dashboard" exact component={Dashboard} />
           <Route path="/board/" exact component={Board} />
           <Route path="/profile" exact component={Profile} />
