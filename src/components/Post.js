@@ -4,10 +4,12 @@ import './components.css'
 
 const Post = () => {
     return (
+   
         <div className='post'>
             <Postscore />
             <Postproper />
         </div>
+   
     )
 }
 
