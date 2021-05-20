@@ -40,7 +40,7 @@ function Loginbtn() {
                     <br></br>
                     password
                     <br></br>
-                    <input type="text" className="login-form" id = "logpass"></input> 
+                    <input type="password" className="login-form" id = "logpass"></input> 
                     <br></br>
                     <br></br>
                     <Link to = "/dashboard">
@@ -63,11 +63,11 @@ function Loginbtn() {
                     <br></br>
                     password
                     <br></br>
-                    <input type="text" className="login-form" id = "logpass"></input> 
+                    <input type="password" className="login-form" id = "logpass"></input> 
                     <br></br>
                     <br></br>
                     confirm password
-                    <input type="text" className="login-form" id = "logpass"></input>
+                    <input type="password" className="login-form" id = "logpass"></input>
                     <br></br>
                     <br></br>
                     <Link to = "/dashboard">
