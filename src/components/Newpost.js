@@ -1,9 +1,8 @@
 import {Link} from 'react-router-dom'
-import Navbar from './Navbar'
+
 const Newpost = () => {
     return (
         <div>
-            <Navbar />
             <div className='board-post'>
                 <form>
                     <input type="text" placeholder='Title' className='title-input'></input>
