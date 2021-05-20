@@ -11,7 +11,7 @@ import Retro from '../graphics/retro.png'
 import Tech from '../graphics/tech.png'
 import Rigs from '../graphics/rigs.png'
 import Support from '../graphics/support.png'
-import Navbar from './Navbar'
+
 const Boardlist = () => {
 
     const linkStyles = {
@@ -21,9 +21,7 @@ const Boardlist = () => {
     }
 
     return (
-
         <div>
-            
             <div className="grid-container">
                 <Link style={linkStyles} to="/board/">
                     <div>
@@ -89,7 +87,7 @@ const Boardlist = () => {
                 </Link>
 
                 
-                <Link style={linkStyles} to="/board/">
+                <Link style={linkStyles}> to="/board/"
                     <div>
                         <img src={Support} className="square-img" alt='support'></img>
                         <h3>SUPPORT</h3>
