@@ -7,6 +7,11 @@ var ReplySchema = new mongoose.Schema(
         type: mongoose.Schema.Types.ObjectId, ref: "Post",
         required: true
     },
+    poster_id:
+    {
+        type: mongoose.Schema.Types.ObjectId, ref: "User",
+        required: true
+    },
     text:
     {
         type: String,
