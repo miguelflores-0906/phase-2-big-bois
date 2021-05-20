@@ -87,7 +87,7 @@ const Boardlist = () => {
                 </Link>
 
                 
-                <Link style={linkStyles}> to="/board/"
+                <Link style={linkStyles} to="/board/">
                     <div>
                         <img src={Support} className="square-img" alt='support'></img>
                         <h3>SUPPORT</h3>

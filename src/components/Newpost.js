@@ -1,7 +1,9 @@
 import {Link} from 'react-router-dom'
-
+import Navbar from './Navbar'
 const Newpost = () => {
     return (
+        <div>
+            <Navbar/>
         <div>
             <div className='board-post'>
                 <form>
@@ -33,6 +35,7 @@ const Newpost = () => {
                 </Link>
             </div>
             
+        </div>
         </div>
     )
 }
