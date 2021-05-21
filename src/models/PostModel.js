@@ -7,11 +7,16 @@ var PostSchema = new mongoose.Schema(
         type: mongoose.Schema.Types.ObjectId, ref: "User",
         required: true
     },
-    text:
+    title:
     {
         type: String,
         required: true
+    },
+    body:
+    {
+        type: String,
+        required: false
     }
 });
 
-module.exports = mongoose.model("User", UserSchema);
+module.exports = mongoose.model("Post", PostSchema);

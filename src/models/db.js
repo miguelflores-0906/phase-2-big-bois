@@ -1,12 +1,8 @@
 const mongoose = require("mongoose");
 const User = require("./UserModel.js");
+const post = require("./PostModel.js");
+const Reply = require("./ReplyModel.js");
 const url = "mongodb+srv://dbuser:1234@ccapdev-mp.laqcf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-
-// const connectDB = async ()=>
-// {
-//     await mongoose.connect(url);
-//     console.log("db connected");
-// }
 
 const options = {
     useUnifiedTopology: true,
@@ -34,7 +30,7 @@ const database =
         });
     },
 
-    insertMany: function(model, docs) {
+    insertMany: function(model, docs, callback) {
         model.insertMany(docs, function(error, result) 
         {
             if(error) return callback(false);
@@ -61,7 +57,7 @@ const database =
         });
     },
 
-    updateOne: function(model, filter, update) 
+    updateOne: function(model, filter, update, callback) 
     {
         model.updateOne(filter, update, function(error, result) 
         {
@@ -71,7 +67,7 @@ const database =
         });
     },
 
-    updateMany: function(model, filter, update) 
+    updateMany: function(model, filter, update, callback) 
     {
         model.updateMany(filter, update, function(error, result) 
         {
@@ -81,7 +77,7 @@ const database =
         });
     },
 
-    deleteOne: function(model, conditions) {
+    deleteOne: function(model, conditions, callback) {
         model.deleteOne(conditions, function (error, result) 
         {
             if(error) return callback(false);
@@ -90,7 +86,7 @@ const database =
         });
     },
 
-    deleteMany: function(model, conditions) 
+    deleteMany: function(model, conditions, callback) 
     {
         model.deleteMany(conditions, function (error, result) 
         {

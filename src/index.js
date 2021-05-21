@@ -4,8 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-// const db = require("./models/db.js");
-// db();
+
+const express = require('express');
+// const routes = require('./routes/routes.js');
+// const db = require('./models/db.js');
+
+// app.use(express.urlencoded({extended: true}));
+// app.use(express.static('../public'));
+// app.use('/', routes);
+// db.connect();
 
 ReactDOM.render(
   <React.StrictMode>
