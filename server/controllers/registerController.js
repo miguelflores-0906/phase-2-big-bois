@@ -6,6 +6,7 @@ const registerController = {
 
     postRegister: function (req, res) {
 
+        console.log(req.body);
         var username = req.body.username;
         var password = req.body.password;
         var gscore = 0;
@@ -18,7 +19,7 @@ const registerController = {
 
         db.insertOne(User, user, function(flag){
             if(flag){
-                res.send("it worked");
+                res.send("it worked")
             }
         });
 
