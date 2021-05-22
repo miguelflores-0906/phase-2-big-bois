@@ -7,11 +7,11 @@ const Postscore = () => {
     return (
         <div className='score'>
             <VscChevronUp 
-                style = {{cursor: 'pointer', display: 'block', margin: 'auto'}} 
+                style = {{cursor: 'pointer', display: 'block', margin: 'auto', width: '30px', height: '30px'}} 
             />
             <p>Score</p>
             <VscChevronDown 
-                style = {{cursor: 'pointer', display: 'block', margin: 'auto'}}
+                style = {{cursor: 'pointer', display: 'block', margin: 'auto', width: '30px', height: '30px'}}
             />
         </div>
     )
