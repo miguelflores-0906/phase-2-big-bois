@@ -22,6 +22,8 @@ function App() {
           <Route path="/dashboard" exact component={Dashboard} />
           <Route path="/board/" exact component={Board} />
           <Route path="/profile" exact component={Profile} />
+          <Route path="/boardpost" exact component={Boardpost} />
+          <Route path="/postpage" exact component={Postpage} />
         </Switch>
       </div>
     </Router>

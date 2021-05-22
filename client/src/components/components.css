@@ -22,7 +22,7 @@
 
 .proper {
     text-overflow: ellipsis;
-    /* max-width: 1232px; */
+    max-width: 1232px;
     overflow: auto;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -51,7 +51,7 @@
     display: block;
     text-align: right;
     font-style: italic;
-    color: #535252
+    color: #535252;
 }
 
 .reply {
