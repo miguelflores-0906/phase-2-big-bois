@@ -239,6 +239,15 @@ nav {
     white-space: pre-line;
 }
 
+.reply-form {
+    background-color: #c4c4c4;
+    padding: 25px;
+    padding-bottom: 15px;
+    overflow: none;
+    margin: 25px 70px;
+    box-shadow: 4px 4px 5px 1px rgba(0, 0, 0, 0.34);
+}
+
 .title-input {
     height: 68px;
     width: 99%;

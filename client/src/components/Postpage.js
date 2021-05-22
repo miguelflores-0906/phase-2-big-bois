@@ -1,6 +1,7 @@
 import Boardpost from './Boardpost'
 import Boardreply from './Boardreply'
 import Navbar from './Navbar'
+import Reply from './Reply'
 const Postpage = () => {
     return (
         <div>
