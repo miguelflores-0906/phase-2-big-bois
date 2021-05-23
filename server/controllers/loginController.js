@@ -17,7 +17,11 @@ const loginController = {
         db.findOne(User, user, null ,function(result)
     {
         if(result != null)
+        {
+            console.log(result._id);
             res.send("login works");
+        }
+            
         else
             res.send("invalid credentials");
     });

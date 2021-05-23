@@ -5,7 +5,7 @@ import {useState} from 'react';
 
 const Newpost = () => {
 
-    const [details, setDetails] = useState({userid: "60aa46403c2d1c5e64c47f52", body: "", board: "", title: ""});
+    const [details, setDetails] = useState({userid: "60aa46403c2d1c5e64c47f52", body: "", board: "general", title: ""});
     const [errorMessage, setErrorMessage] = useState("");
     const changeError = (text) => setErrorMessage(text);
 
