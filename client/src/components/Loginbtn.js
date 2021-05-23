@@ -88,6 +88,7 @@ function Loginbtn(Login, error) {
                 changeLoginError("no password");
             }
         }
+        else
         {
             changeLoginError("no username");
         }
