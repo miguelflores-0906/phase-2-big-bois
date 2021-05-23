@@ -14,6 +14,7 @@ const Newpost = () => {
             <Navbar/>
         <div>
             <div className='board-post'>
+            <div className="errormsg"></div>
                 <form>
                     <input type="text" placeholder='Title' className='title-input' onChange={e => setDetails({...details, title: e.target.value})} value={details.title}></input>
                     <br></br>
