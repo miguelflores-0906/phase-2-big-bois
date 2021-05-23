@@ -17,11 +17,15 @@ const loginController = {
         db.findOne(User, user, null ,function(result)
     {
         if(result != null)
+<<<<<<< Updated upstream
         {
             console.log(result._id);
             res.send("login works");
         }
             
+=======
+            res.send(result._id);
+>>>>>>> Stashed changes
         else
             res.send("invalid credentials");
     });

@@ -89,7 +89,13 @@ function Loginbtn(Login, error) {
                          console.log(res);
                          if(res.data == "login works")
                          {
+<<<<<<< Updated upstream
                              console.log("Credentials accepted. Welcome back.");
+=======
+                             var cookieName = 'thegameforum_' + res
+                             Cookies.set(cookieName, res, {expires: 1})
+                             console.log("Credentials accepted. Welcome back user " + Cookies.get(cookieName));
+>>>>>>> Stashed changes
                              history.push("/dashboard");
                          }
                          else
