@@ -383,6 +383,7 @@ nav {
     background-color: #2C387E;
     font-family: Poppins;
     color: #FFFFFF;
+    cursor: pointer;
   }
 
   .errormsg {
