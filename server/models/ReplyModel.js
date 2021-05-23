@@ -16,11 +16,6 @@ var ReplySchema = new mongoose.Schema(
     {
         type: String,
         required: true
-    },
-    reply_to_id:
-    {
-        type: mongoose.Schema.Types.ObjectId, ref: "Reply",
-        required: false
     }
 });
 

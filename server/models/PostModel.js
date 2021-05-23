@@ -7,7 +7,17 @@ var PostSchema = new mongoose.Schema(
         type: mongoose.Schema.Types.ObjectId, ref: "User",
         required: true
     },
-    text:
+    body:
+    {
+        type: String,
+        required: false
+    },
+    board:
+    {
+        type: String,
+        required: true
+    },
+    title:
     {
         type: String,
         required: true
