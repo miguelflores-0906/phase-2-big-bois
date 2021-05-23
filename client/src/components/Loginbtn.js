@@ -88,6 +88,7 @@ function Loginbtn(Login, error) {
                          if(res.data == "login works")
                          {
                              console.log("Credentials accepted. Welcome back.");
+                             history.push("/dashboard");
                          }
                          else
                          {
