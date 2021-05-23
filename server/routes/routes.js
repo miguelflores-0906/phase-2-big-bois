@@ -20,6 +20,8 @@ app.post("/checkUser", registerController.postCheckUser);
 
 app.post("/newPost", postController.newPost);
 
+app.post("/getPost", postController.getPost);
+
 
 
 

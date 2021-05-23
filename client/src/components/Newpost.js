@@ -2,10 +2,13 @@ import {Link} from 'react-router-dom'
 import Navbar from './Navbar'
 import axios from 'axios';
 import {useState} from 'react';
+import React from 'react';
+import {Component} from 'react';
+import Cookies from 'js-cookie';
 
 const Newpost = () => {
 
-    const [details, setDetails] = useState({userid: "60aa46403c2d1c5e64c47f52", body: "", board: "general", title: ""});
+    const [details, setDetails] = useState({userid: Cookies.get("thegameforum_userLogin"), body: "", board: "general", title: ""});
     const [errorMessage, setErrorMessage] = useState("");
     const changeError = (text) => setErrorMessage(text);
 
