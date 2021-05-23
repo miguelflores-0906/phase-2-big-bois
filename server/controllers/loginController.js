@@ -13,11 +13,11 @@ const loginController = {
             username: username,
             password: password,
         }
-
+        console.log(user);
         db.findOne(User, user, null ,function(result)
     {
         if(result != null)
-            res.send("login works\n" + "username = " + username + "\npassword = " + password);
+            res.send("login works");
         else
             res.send("invalid credentials");
     });
