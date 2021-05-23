@@ -5,6 +5,8 @@ const User = require('../models/UserModel.js');
 const registerController = {
 
     postRegister: function (req, res) {
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        console.log('Passed...');
 
         var username = req.body.username;
         var password = req.body.password;
@@ -15,6 +17,8 @@ const registerController = {
             password: password,
             gscore: gscore,
         }
+
+        
 
         db.insertOne(User, user, function(flag){
             if(flag){
