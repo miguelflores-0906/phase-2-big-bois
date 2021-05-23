@@ -15,13 +15,13 @@ const registerController = {
             password: password,
             gscore: gscore,
         }
-
+        console.log(user);
         db.insertOne(User, user, function(flag){
             if(flag){
                 res.send("it worked");
             }
         });
-
+        
         // db.insertOne(User, user, function(flag) {
         //     if(flag) {
 

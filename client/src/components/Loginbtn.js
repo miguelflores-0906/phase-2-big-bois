@@ -16,8 +16,12 @@ function Loginbtn(Login, error) {
 
     const submitHandler = e => {
         e.preventDefault();
-        console.log(details);
-        axios.post("http://localhost:5000/register", {details});
+        // console.log(details);
+        axios.post('http://localhost:5000/register', details)
+        .then(() => console.log('User Registered'))
+        .catch(err => {
+          console.error(err);
+        });
     }
 
     const [toggleState, setToggleState] = useState(1);
