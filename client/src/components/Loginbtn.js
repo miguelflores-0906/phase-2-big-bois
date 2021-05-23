@@ -5,13 +5,14 @@ import { useHistory } from 'react-router-dom';
 import {Link} from 'react-router-dom'
 import axios from 'axios';
 import {useState} from 'react';
+import Cookies from 'js-cookie'
 
 //code below is for logging in and registering
 
 //end of code for login and register
 
 function Loginbtn(Login, error) {
-
+    let history = useHistory();
     const [details, setDetails] = useState({username: "", password: "", confirm: ""});
 
     const [registerErrorMessage, setRegisterErrorMessage] = useState("");
@@ -76,6 +77,7 @@ function Loginbtn(Login, error) {
     }
 
     const loginSubmitHandler = e => {
+
         e.preventDefault();
         console.log(details);
         if(details.username.length > 0)
@@ -89,7 +91,9 @@ function Loginbtn(Login, error) {
                          console.log(res);
                          if(res.data == "login works")
                          {
-                             console.log("Credentials accepted. Welcome back.");
+                             var cookieName = 'thegameforum_' + details.username
+                             Cookies.set(cookieName, details.username, {expires: 1})
+                             console.log("Credentials accepted. Welcome back user " + Cookies.get(cookieName));
                              history.push("/dashboard");
                          }
                          else

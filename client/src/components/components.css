@@ -136,9 +136,16 @@ nav {
     justify-content: space-between;
 }
 
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .userName{
-    margin-left:auto;
-    margin-right:auto;
+    /* margin-left:auto;
+    margin-right:auto; */
+    margin: 0 10px;
     text-align: center;
     height: 76px;
 
@@ -152,7 +159,55 @@ nav {
     color: #000000;
 
     justify-content: space-between;
+}
 
+.profile-header-dot {
+    margin: 0 10px;
+    text-align: center;
+    height: 76px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 72px;
+    align-items: center;
+
+    color: #000000;
+
+    justify-content: space-between;
+}
+
+.gamerScore {
+    margin: 0 10px;
+    text-align: center;
+    height: 76px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 72px;
+    align-items: center;
+
+    color: #000000;
+
+    justify-content: space-between;
+}
+
+.profile-posts {
+    padding:0;
+}
+
+.profile-posts h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: -20px;
+}
+
+.post-page-replies {
+    padding: 0px;
 }
 
 .board-name {
@@ -237,6 +292,15 @@ nav {
 .board-post p {
     text-align: justify;
     white-space: pre-line;
+}
+
+.reply-form {
+    background-color: #c4c4c4;
+    padding: 25px;
+    padding-bottom: 15px;
+    overflow: none;
+    margin: 25px 70px;
+    box-shadow: 4px 4px 5px 1px rgba(0, 0, 0, 0.34);
 }
 
 .title-input {
@@ -390,4 +454,19 @@ nav {
     color: red;
     text-align: center;
     font-size: 20px;
+  }
+
+  .cancel {
+      cursor: pointer;
+      text-align: right;
+      color: #535252;
+      font-style: italic;
+  }
+
+  .posts {
+      padding: 0;
+  }
+
+  .board-post-score {
+      padding: 0;
   }
