@@ -12,7 +12,7 @@ import Cookies from 'js-cookie'
 //end of code for login and register
 
 function Loginbtn(Login, error) {
-
+    let history = useHistory();
     const [details, setDetails] = useState({username: "", password: "", confirm: ""});
 
     const [registerErrorMessage, setRegisterErrorMessage] = useState("");
@@ -75,6 +75,7 @@ function Loginbtn(Login, error) {
     }
 
     const loginSubmitHandler = e => {
+
         e.preventDefault();
         console.log(details);
         if(details.username.length > 0)
