@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const User = require("./UserModel.js");
-const url = "mongodb://localhost:27017/ccapdev-mp";
+const Post = require("./PostModel.js");
+const Reply = require("./ReplyModel.js");
+const url = "mongodb+srv://admin:admin@thegameforum.umliw.mongodb.net/TheGameForum?retryWrites=true&w=majority";
 
 const options = {
     useUnifiedTopology: true,

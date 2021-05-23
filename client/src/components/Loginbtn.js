@@ -1,11 +1,24 @@
 import React from 'react'
 import './components.css'
-import { useState } from "react"
 import { render } from '@testing-library/react';
 import { useHistory } from 'react-router-dom';
 import {Link} from 'react-router-dom'
+import axios from 'axios';
+import {useState} from 'react';
 
-function Loginbtn() {
+//code below is for logging in and registering
+
+//end of code for login and register
+
+function Loginbtn(Login, error) {
+
+    const [details, setDetails] = useState({username: "", password: "", confirm: ""});
+
+    const submitHandler = e => {
+        e.preventDefault();
+        console.log(details);
+        axios.post("http://localhost:5000/register", {details});
+    }
 
     const [toggleState, setToggleState] = useState(1);
   
@@ -43,9 +56,9 @@ function Loginbtn() {
                     <input type="password" className="login-form" id = "logpass"></input> 
                     <br></br>
                     <br></br>
-                    <Link to = "/dashboard">
-                        <button id = "login-button">Log In</button>
-                    </Link>
+                    {/* <Link to = "/dashboard"> */}
+                        <button id = "login-button" type="submit">Log In</button>
+                    {/* </Link> */}
                     <br></br>
                     </form>
 
@@ -55,24 +68,24 @@ function Loginbtn() {
                     className={toggleState === 2 ? "content  active-content" : "content"}>
                     
                     <p className = "errormsg"></p>
-                    <form method="post" action="/register">
+                    <form onSubmit={submitHandler}>
                     username 
                     <br></br>
-                    <input type="text" className="login-form" id = "loguser"></input> 
+                    <input type="text" className="login-form" id = "loguser" name="username" onChange={e => setDetails({...details, username: e.target.value})} value={details.username}></input> 
                     <br></br>
                     <br></br>
                     password
                     <br></br>
-                    <input type="password" className="login-form" id = "logpass"></input> 
+                    <input type="password" className="login-form" id = "logpass" name="password" onChange={e => setDetails({...details, password: e.target.value})} value={details.password}></input> 
                     <br></br>
                     <br></br>
                     confirm password
-                    <input type="password" className="login-form" id = "logpass"></input>
+                    <input type="password" className="login-form" id = "logpass" name="confirm" onChange={e => setDetails({...details, confirm: e.target.value})} value={details.confirm}></input>
                     <br></br>
                     <br></br>
-                    <Link to = "/dashboard">
-                    <button id = "login-button">Register</button>
-                    </Link>
+                    {/* <Link to = "/dashboard"> */}
+                    <button id = "login-button" type="submit">Register</button>
+                    {/* </Link> */}
                     <br></br>
                     </form>
                 </div>
