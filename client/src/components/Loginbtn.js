@@ -24,6 +24,8 @@ function Loginbtn(Login, error) {
     var passwordError = "Password should be more than 8 characters";
     var confirmError = "password and confirm are not the same";
 
+    let history = useHistory();
+
     const registerSubmitHandler = e => {
         e.preventDefault();
         console.log(details);
@@ -41,7 +43,7 @@ function Loginbtn(Login, error) {
                          console.log(res);
                          if(res.data == "")
                          {
-                            changeRegisterError("");
+                            changeRegisterError("Register was successful");
                             axios.post('http://localhost:5000/register', details)
                              .then(() => console.log('User Registered'))
                              .catch(err => {
@@ -88,6 +90,7 @@ function Loginbtn(Login, error) {
                          if(res.data == "login works")
                          {
                              console.log("yay it works");
+                            history.push("/dashboard");
                          }
                          else
                          {

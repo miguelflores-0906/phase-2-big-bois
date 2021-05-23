@@ -1,18 +1,26 @@
 import {Link} from 'react-router-dom'
 import Navbar from './Navbar'
+import axios from 'axios';
+import {useState} from 'react';
+
 const Newpost = () => {
+
+    const [details, setDetails] = useState({userid: "60aa46403c2d1c5e64c47f52", body: "", board: "", title: ""});
+
+    
+
     return (
         <div>
             <Navbar/>
         <div>
             <div className='board-post'>
                 <form>
-                    <input type="text" placeholder='Title' className='title-input'></input>
+                    <input type="text" placeholder='Title' className='title-input' onChange={e => setDetails({...details, title: e.target.value})} value={details.title}></input>
                     <br></br>
-                    <textarea name='post-body' className='post-body' placeholder='Type in your post here'></textarea>
+                    <textarea name='post-body' className='post-body' placeholder='Type in your post here' onChange={e => setDetails({...details, body: e.target.value})} value={details.body}></textarea>
                     <br></br>
                     <label>Choose a board to place this thread: </label>
-                    <select name='board-select' className='board-select'>
+                    <select name='board-select' className='board-select' onChange={e => setDetails({...details, board: e.target.value})} value={details.board}>
                         <option value='general'>General</option>
                         <option value='esports'>E-sports</option>
                         <option value='news'>News</option>
