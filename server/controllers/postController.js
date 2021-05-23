@@ -1,38 +1,39 @@
+const e = require('express');
 const db = require('../models/db.js');
-
-const Post = require('../models/postModel.js');
+const mongoose = require("mongoose");
+const Post = require('../models/PostModel.js');
+const mongodb = require("mongodb");
 
 const postController = {
 
-    postRegister: function (req, res) {
+    newPost: function (req, res) {
 
-        var _id = userid;
+        var poster_id = req.body.userid;
         var title = req.body.title;
         var body = req.body.body;
         var board = req.body.board;
         
         var post = {
-            _id: _id,
-            title: title,
+            poster_id: poster_id,
             body: body,
-            board: board
+            board: board,
+            title: title
+            
         }
         console.log(post);
         db.insertOne(Post, post, function(flag){
             if(flag){
                 res.send("it worked");
             }
+            else
+            {
+                console.log("didnt work");
+                res.send(flag);
+            }
         });
-        
-        // db.insertOne(User, user, function(flag) {
-        //     if(flag) {
-
-        //         // res.redirect('/su=ccess?fName' + fName +'&lName=' + lName + '&idNum=' + idNum); //change response to success using react stuff
-        //     }
-        // });
     },
 
-    postCheckUser: function (req, res) {
+    findPost: function (req, res) {
 
         var username = req.body.username;
 

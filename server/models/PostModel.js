@@ -1,6 +1,7 @@
 var mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-var PostSchema = new mongoose.Schema(
+var PostSchema = new Schema(
 {
     poster_id:
     {
