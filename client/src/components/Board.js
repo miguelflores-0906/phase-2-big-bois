@@ -19,10 +19,13 @@ const Board = () => {
             
             {/* append or render the posts here */}
             <div className='posts'>
-                <Post />
-                <Post />
-                <Post />
-                <Post />
+                <ul>
+                    <Post title="This is a title" body="sample body" score="0" username="username"/>
+                    <Post title="This is a title" body="sample body" score="0" username="username"/>
+                    <Post title="This is a title" body="sample body" score="0" username="username"/>
+                    <Post title="This is a title" body="sample body" score="0" username="username"/>
+                </ul>
+                
             </div>
         </div>
         </div>

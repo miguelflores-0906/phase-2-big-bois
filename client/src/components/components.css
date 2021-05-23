@@ -40,6 +40,7 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    text-align: left;
 }
 
 .proper p {
@@ -48,6 +49,7 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    text-align: left;
 }
 
 .username {
@@ -466,6 +468,10 @@ nav {
   .posts {
       padding: 0;
   }
+  
+  /* .posts ul {
+
+  } */
 
   .board-post-score {
       padding: 0;

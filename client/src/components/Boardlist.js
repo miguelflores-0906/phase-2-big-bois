@@ -20,11 +20,15 @@ const Boardlist = () => {
         fontSize: '20px',
     }
 
+    const test_method = () => {
+        console.log('yeeting to a diff board');
+    }
+
     return (
         <div>
             <div className="grid-container">
                 <Link style={linkStyles} to="/board/">
-                    <div>
+                    <div onClick={() => test_method()}>
                         <img src={General} className="img" alt="general"></img>
                         <h3>GENERAL</h3>
                     </div>
