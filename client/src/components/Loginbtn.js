@@ -25,7 +25,7 @@ function Loginbtn(Login, error) {
     var passwordError = "Password should be more than 8 characters";
     var confirmError = "password and confirm are not the same";
 
-    let history = useHistory();
+    // let history = useHistory();
 
     const registerSubmitHandler = e => {
         e.preventDefault();
