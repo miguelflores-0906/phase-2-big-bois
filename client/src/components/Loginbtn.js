@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import {Link} from 'react-router-dom'
 import axios from 'axios';
 import {useState} from 'react';
+import Cookies from 'js-cookie'
 
 //code below is for logging in and registering
 
@@ -87,7 +88,9 @@ function Loginbtn(Login, error) {
                          console.log(res);
                          if(res.data == "login works")
                          {
-                             console.log("Credentials accepted. Welcome back.");
+                             var cookieName = 'thegameforum_' + details.username
+                             Cookies.set(cookieName, details.username, {expires: 1})
+                             console.log("Credentials accepted. Welcome back user " + Cookies.get(cookieName));
                              history.push("/dashboard");
                          }
                          else
