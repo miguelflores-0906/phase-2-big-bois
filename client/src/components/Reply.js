@@ -1,5 +1,6 @@
 import React from 'react'
 
+// this form submits the input to a database to be rendered later on after submission
 const Reply = () => {
     return (
         <div className="reply-form">
@@ -8,7 +9,7 @@ const Reply = () => {
                 <input type="text" placeholder="Enter your reply here" className="post-body"></input>
                 <input type="submit" class="reply-btn"></input>
             </form>
-            <p>cancel</p>
+            <p className="cancel">cancel</p>
         </div>
     )
 }

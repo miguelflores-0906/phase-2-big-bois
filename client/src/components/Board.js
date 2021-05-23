@@ -16,10 +16,14 @@ const Board = () => {
                     </div>
                 </Link>
             </div>
-            <Post />
-            <Post />
-            <Post />
-            <Post />
+            
+            // append or render the posts here
+            <div className='posts'>
+                <Post />
+                <Post />
+                <Post />
+                <Post />
+            </div>
         </div>
         </div>
     )
