@@ -1,4 +1,8 @@
-import Postbtn from './Postbtn'
+// import Postbtn from './Postbtn'
+import {FaArrowUp} from 'react-icons/fa'
+import {FaArrowDown} from 'react-icons/fa'
+import {FaReply} from 'react-icons/fa'
+import {FaTrash} from 'react-icons/fa'
 
 const Boardpost = () => {
     return (
@@ -9,7 +13,14 @@ const Boardpost = () => {
             </p>
             <div className='board-post-footer'>
                 <div className='username'>username</div>
-                <Postbtn />
+                <div className='post-btn'>
+                    <FaArrowUp />
+                    <div className="board-post-score">0</div>
+                    <FaArrowDown />
+                    <FaReply />
+                    <FaTrash />
+                </div>
+                {/* <Postbtn /> */}
             </div>
         </div>
     )

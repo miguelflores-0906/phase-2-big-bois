@@ -17,7 +17,7 @@ const Board = () => {
                 </Link>
             </div>
             
-            // append or render the posts here
+            {/* append or render the posts here */}
             <div className='posts'>
                 <Post />
                 <Post />
