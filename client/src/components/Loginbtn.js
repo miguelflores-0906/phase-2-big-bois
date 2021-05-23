@@ -89,12 +89,13 @@ function Loginbtn(Login, error) {
                          console.log(res);
                          if(res.data == "login works")
                          {
-                             console.log("yay it works");
-                            history.push("/dashboard");
+                             console.log("Credentials accepted. Welcome back.");
+                             history.push("/dashboard");
                          }
                          else
                          {
-                             console.log("it dosent work");
+                             changeLoginError("Incorrect username or password")
+                             console.log("Invalid credentials");
                          }
                      })
                      .catch(err => {
@@ -103,12 +104,12 @@ function Loginbtn(Login, error) {
             }
             else
             {
-                changeLoginError("no password");
+                changeLoginError("Please enter your password");
             }
         }
         else
         {
-            changeLoginError("no username");
+            changeLoginError("Please enter your username");
         }
     }
 
