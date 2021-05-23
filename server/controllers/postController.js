@@ -33,11 +33,12 @@ const postController = {
         });
     },
 
-    findPost: function (req, res) {
+    getPost: function (req, res) {
 
-        var username = req.body.username;
+        var board = req.body.board;
 
-        db.findOne(User, {username: username}, 'username', function (result) {
+        db.findMany(Post, {board: board}, "poster_id title body", function (result) {
+            console.log(result);
             res.send(result);
         });
     },

@@ -25,8 +25,6 @@ function Loginbtn(Login, error) {
     var passwordError = "Password should be more than 8 characters";
     var confirmError = "password and confirm are not the same";
 
-    // let history = useHistory();
-
     const registerSubmitHandler = e => {
         e.preventDefault();
         console.log(details);
@@ -89,11 +87,9 @@ function Loginbtn(Login, error) {
                 axios.post('http://localhost:5000/login', details)
                      .then(res => {
                          console.log(res);
-                         if(res.data == "login works")
+                         if(res.data != "invalid credentials")
                          {
-                             var cookieName = 'thegameforum_' + details.username
-                             Cookies.set(cookieName, details.username, {expires: 1})
-                             console.log("Credentials accepted. Welcome back user " + Cookies.get(cookieName));
+                             Cookies.set("thegameforum_userLogin", res.data, {expires: 1})
                              history.push("/dashboard");
                          }
                          else

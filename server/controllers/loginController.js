@@ -19,7 +19,7 @@ const loginController = {
         if(result != null)
         {
             console.log(result._id);
-            res.send("login works");
+            res.send(result._id);
         }
             
         else
