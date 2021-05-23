@@ -33,7 +33,7 @@ function Loginbtn(Login, error) {
             if(details.username.length <= 8)
             {
                 changeRegisterError("");
-                if(details.password.length < 20)
+                if(details.password.length < 20 && details.password.length >= 8)
                 {
                     changeRegisterError("");
                     axios.post('http://localhost:5000/register', details)
