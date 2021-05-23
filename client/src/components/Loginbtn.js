@@ -20,8 +20,8 @@ function Loginbtn(Login, error) {
     const changeRegisterError = (text) => setRegisterErrorMessage(text);
     const changeLoginError = (text) => setLoginErrorMessage(text);
 
-    var usernameError = "name has the wrong format";
-    var passwordError = "password has the wrong format";
+    var usernameError = "Username should have 8-19 characters";
+    var passwordError = "Password should be more than 8 characters";
     var confirmError = "password and confirm are not the same";
 
     const registerSubmitHandler = e => {
@@ -30,14 +30,29 @@ function Loginbtn(Login, error) {
         if(details.confirm == details.password)
         {
             changeRegisterError("");
-            if(details.username.length <= 8)
+            if(details.username.length >= 8 && details.username.length < 20)
             {
                 changeRegisterError("");
-                if(details.password.length < 20 && details.password.length >= 8)
+                if(details.password.length >= 8)
                 {
                     changeRegisterError("");
-                    axios.post('http://localhost:5000/register', details)
-                     .then(() => console.log('User Registered'))
+                    axios.post('http://localhost:5000/checkUser', details)
+                     .then(res =>{
+                         console.log(res);
+                         if(res.data == "")
+                         {
+                            changeRegisterError("");
+                            axios.post('http://localhost:5000/register', details)
+                             .then(() => console.log('User Registered'))
+                             .catch(err => {
+                             console.error(err);
+                             });
+                         }
+                         else
+                         {
+                            changeRegisterError("Username already taken");
+                         }
+                     })
                      .catch(err => {
                      console.error(err);
                      });
