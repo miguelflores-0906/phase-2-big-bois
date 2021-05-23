@@ -6,16 +6,39 @@ import {useState} from 'react';
 const Newpost = () => {
 
     const [details, setDetails] = useState({userid: "60aa46403c2d1c5e64c47f52", body: "", board: "", title: ""});
+    const [errorMessage, setErrorMessage] = useState("");
+    const changeError = (text) => setErrorMessage(text);
 
-    
+    const submitHandler = e => {
+        console.log("submitHandler is getting executed");
+        e.preventDefault();
+        console.log(details);
+        
+        if(details.title.length > 0)
+        {
+            changeError("");
+            axios.post('http://localhost:5000/newPost', details)
+                     .then(res => {
+                         console.log(res);
+                     })
+                     .catch(err => {
+                     console.error(err);
+                     });
+        }
+        else
+        {
+            changeError("No Title");
+            console.log("no title");
+        }
+    }
 
     return (
         <div>
             <Navbar/>
         <div>
             <div className='board-post'>
-            <div className="errormsg"></div>
-                <form>
+            <div className="errormsg">{errorMessage}</div>
+                <form onSubmit={submitHandler}>
                     <input type="text" placeholder='Title' className='title-input' onChange={e => setDetails({...details, title: e.target.value})} value={details.title}></input>
                     <br></br>
                     <textarea name='post-body' className='post-body' placeholder='Type in your post here' onChange={e => setDetails({...details, body: e.target.value})} value={details.body}></textarea>
@@ -32,9 +55,10 @@ const Newpost = () => {
                         <option value='rigs'>Rigs</option>
                         <option value='support'>Support</option>
                     </select>
+                    <input type="submit" className='submit-btn'></input>
                 </form>
 
-                <input type='submit' className='submit-btn'></input>
+                
 
                 {/* find out how to do previous page using react : ) */}
                 <Link to='/Dashboard' style={{textDecoration: 'none',}}>
