@@ -30,14 +30,14 @@ const registerController = {
         // });
     },
 
-    getCheckID: function (req, res) {
+    postCheckUser: function (req, res) {
 
-        var idNum = req.query.idNum;
+        var username = req.body.username;
 
-        db.findOne(User, {idNum: idNum}, 'idNum', function (result) {
+        db.findOne(User, {username: username}, 'username', function (result) {
             res.send(result);
         });
-    }
+    },
 
 }
 module.exports = registerController;

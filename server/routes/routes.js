@@ -15,6 +15,8 @@ app.post('/register', registerController.postRegister);
 
 app.post('/login', loginController.postLogin);
 
+app.post("/checkUser", registerController.postCheckUser);
+
 
 
 

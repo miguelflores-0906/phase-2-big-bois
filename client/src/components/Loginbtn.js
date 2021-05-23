@@ -14,14 +14,100 @@ function Loginbtn(Login, error) {
 
     const [details, setDetails] = useState({username: "", password: "", confirm: ""});
 
-    const submitHandler = e => {
+    const [registerErrorMessage, setRegisterErrorMessage] = useState("");
+    const [loginErrorMessage, setLoginErrorMessage] = useState("");
+
+    const changeRegisterError = (text) => setRegisterErrorMessage(text);
+    const changeLoginError = (text) => setLoginErrorMessage(text);
+
+    var usernameError = "Username should have 8-19 characters";
+    var passwordError = "Password should be more than 8 characters";
+    var confirmError = "password and confirm are not the same";
+
+    const registerSubmitHandler = e => {
         e.preventDefault();
-        // console.log(details);
-        axios.post('http://localhost:5000/register', details)
-        .then(() => console.log('User Registered'))
-        .catch(err => {
-          console.error(err);
-        });
+        console.log(details);
+        if(details.confirm == details.password)
+        {
+            changeRegisterError("");
+            if(details.username.length >= 8 && details.username.length < 20)
+            {
+                changeRegisterError("");
+                if(details.password.length >= 8)
+                {
+                    changeRegisterError("");
+                    axios.post('http://localhost:5000/checkUser', details)
+                     .then(res =>{
+                         console.log(res);
+                         if(res.data == "")
+                         {
+                            changeRegisterError("");
+                            axios.post('http://localhost:5000/register', details)
+                             .then(() => console.log('User Registered'))
+                             .catch(err => {
+                             console.error(err);
+                             });
+                         }
+                         else
+                         {
+                            changeRegisterError("Username already taken");
+                         }
+                     })
+                     .catch(err => {
+                     console.error(err);
+                     });
+                }
+                else
+                {
+                    changeRegisterError(passwordError);
+                }
+            }
+            else
+            {
+                changeRegisterError(usernameError);
+            }
+        }
+        else
+        {
+            changeRegisterError(confirmError);
+        }
+    }
+
+    const loginSubmitHandler = e => {
+        e.preventDefault();
+        console.log(details);
+        if(details.username.length > 0)
+        {
+            changeLoginError("");
+            if(details.password.length > 0)
+            {
+                changeLoginError("");
+                axios.post('http://localhost:5000/login', details)
+                     .then(res => {
+                         console.log(res);
+                         if(res.data == "login works")
+                         {
+                             console.log("Credentials accepted. Welcome back.");
+                         }
+                         else
+                         {
+                             changeLoginError("Incorrect username or password")
+                             console.log("Invalid credentials");
+                         }
+                     })
+                     .catch(err => {
+                     console.error(err);
+                     });
+            }
+            else
+            {
+                changeLoginError("Please enter your password");
+            }
+        }
+        else
+        {
+            changeLoginError("Please enter your username");
+        }
     }
 
     const [toggleState, setToggleState] = useState(1);
@@ -48,16 +134,16 @@ function Loginbtn(Login, error) {
             <div className="content-tabs">
                 <div
                     className={toggleState === 1 ? "content  active-content" : "content"}>
-                    <p className = "errormsg"></p>
-                    <form method="post" action="/login">
+                    <p className = "errormsg">{loginErrorMessage}</p>
+                    <form onSubmit={loginSubmitHandler}>
                     username 
                     <br></br>
-                    <input type="text" className="login-form" id = "loguser"></input> 
+                    <input type="text" className="login-form" id = "loguser" onChange={e => setDetails({...details, username: e.target.value})} value={details.username}></input> 
                     <br></br>
                     <br></br>
                     password
                     <br></br>
-                    <input type="password" className="login-form" id = "logpass"></input> 
+                    <input type="password" className="login-form" id = "logpass" onChange={e => setDetails({...details, password: e.target.value})} value={details.password}></input> 
                     <br></br>
                     <br></br>
                     {/* <Link to = "/dashboard"> */}
@@ -71,8 +157,8 @@ function Loginbtn(Login, error) {
                 <div
                     className={toggleState === 2 ? "content  active-content" : "content"}>
                     
-                    <p className = "errormsg"></p>
-                    <form onSubmit={submitHandler}>
+                    <p className = "errormsg" >{registerErrorMessage}</p>
+                    <form onSubmit={registerSubmitHandler}>
                     username 
                     <br></br>
                     <input type="text" className="login-form" id = "loguser" name="username" onChange={e => setDetails({...details, username: e.target.value})} value={details.username}></input> 
