@@ -8,11 +8,9 @@ import React from 'react'
 
 const SocialBoard = () => {
 
-    var postArray
-
     const [posts, setPosts] = useState("Nothing to see here")
 
-    const updatePosts = () => setPosts(postArray.data.map((post, index) => {
+    const updatePosts = (postArray) => setPosts(postArray.data.map((post, index) => {
         return (
             <Post 
                 title = {post.title}
@@ -25,8 +23,7 @@ const SocialBoard = () => {
     useEffect(() => {
         axios.post('http://localhost:5000/getPost', {board: "social"})
             .then(res => {
-                postArray = res; 
-                updatePosts()
+                updatePosts(res)
             })
             .catch(err => {
                 console.error(err);
