@@ -87,7 +87,7 @@ function Loginbtn(Login, error) {
                 axios.post('http://localhost:5000/login', details)
                      .then(res => {
                          console.log(res);
-                         if(res.data != "invalid credentials")
+                         if(res.data !== "invalid credentials")
                          {
                              Cookies.set("thegameforum_userLogin", res.data, {expires: 1})
                              history.push("/dashboard");
