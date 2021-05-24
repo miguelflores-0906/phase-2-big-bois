@@ -11,11 +11,13 @@ const TechBoard = () => {
     const [posts, setPosts] = useState("Nothing to see here")
 
     const updatePosts = (postArray) => setPosts(postArray.data.map((post, index) => {
+
         return (
             <Post 
                 title = {post.title}
                 body = {post.body}
-                score = {post.score}
+                score = {post.gamerscore}
+                // username = {username}
             />
         )
     }))

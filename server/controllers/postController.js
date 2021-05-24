@@ -40,7 +40,7 @@ const postController = {
 
         var board = req.body.board;
 
-        db.findMany(Post, {board: board}, "poster_id title body", function (result) {
+        db.findMany(Post, {board: board}, "poster_id title body gamerscore", function (result) {
             console.log(result);
             res.send(result);
         });

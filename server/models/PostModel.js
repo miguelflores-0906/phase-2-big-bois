@@ -26,6 +26,7 @@ var PostSchema = new Schema(
     gamerscore:
     {
         type: Number,
+        default: 0,
         required: true
     }
 });
