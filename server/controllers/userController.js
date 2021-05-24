@@ -10,9 +10,9 @@ const userController = {
 
         console.log("in finduser");
         // var _id = ObjectId(req.body._id);
-        var _id = req.body._id;
+        var username = req.body.username;
         console.log("objectid assigned");
-        db.findOne(User, {_id: _id}, "username", function (result) {
+        db.findOne(User, {username: username}, null, function (result) {
             res.send(result);
         });
     },
