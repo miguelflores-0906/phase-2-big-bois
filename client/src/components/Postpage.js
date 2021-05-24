@@ -2,13 +2,18 @@ import Boardpost from './Boardpost'
 import Boardreply from './Boardreply'
 import Navbar from './Navbar'
 import Reply from './Reply'
-const Postpage = () => {
+const Postpage = (props) => {
+    console.log(props.location.id)
     return (
         <div>
             <Navbar/>
             <div>
                 <h1 className='board-name'>BOARD NAME</h1>
-                <Boardpost />
+                <Boardpost
+                    id = {props.location.id} 
+                    title = {props.location.title}
+                    body = {props.location.body}
+                    score = {props.location.score}/>
             </div>
 
             {/* append replies here */}

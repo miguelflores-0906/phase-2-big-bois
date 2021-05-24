@@ -9,6 +9,7 @@ const Post = (props) => {
         color: 'black',
         textDecoration: 'none',
     }
+    console.log(props)
 
     return (
         <li>
@@ -25,7 +26,14 @@ const Post = (props) => {
                     />
                 </div>
                 <div className='postBody'>
-                    <Link style={navStyle} to ="/postpage">
+                    <Link style={navStyle} to = {{
+                        pathname: "/postpage",
+                        id: props.id,
+                        title: props.title,
+                        body: props.body,
+                        score: props.score
+                        
+                        }}>
                     <div className='proper'>
                         <h2>{props.title}</h2>
                         <p>{props.body}</p>
