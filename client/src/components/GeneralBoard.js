@@ -8,22 +8,20 @@ import React from 'react'
 
 const GeneralBoard = () => {
     
-    var postArray
+    // var postArray
 
 
     useEffect(() => {
         axios.post('http://localhost:5000/getPost', {board: "general"})
             .then(res => {
                 console.log(res);
-                postArray = res; 
-                console.log(postArray)
+                // postArray = res; 
+                // postArray = res.map((post, index))
             })
             .catch(err => {
                 console.error(err);
             })
     })
-
-    // state = {postArray}
 
     return (
         <div> 
@@ -41,15 +39,8 @@ const GeneralBoard = () => {
             {/* append or render the posts here */}
             <div className='posts'>
                 <ul>
-                    {/* <Post /> */}
                     {
-                        // this.state.postArray.map((post, index) => {
-                        //     return(
-                        //         <Post 
-                        //             title = {post.title}
-                        //         />
-                        //     )
-                        // })
+                        <Post />
                     }
                 </ul>
                 {/* <button onClick={() => test_method()}>press me</button> */}
