@@ -17,6 +17,7 @@ const NewsBoard = () => {
                 body = {post.body}
                 score = {post.gamerscore}
                 username = {post.poster_username}
+                board = "News"
             />
         )
     }))

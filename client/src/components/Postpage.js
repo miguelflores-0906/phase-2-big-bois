@@ -8,7 +8,7 @@ const Postpage = (props) => {
         <div>
             <Navbar/>
             <div>
-                <h1 className='board-name'>BOARD NAME</h1>
+                <h1 className='board-name'>{props.location.board}</h1>
                 <Boardpost
                     id = {props.location.id} 
                     title = {props.location.title}
