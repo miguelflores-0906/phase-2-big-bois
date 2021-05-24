@@ -3,7 +3,6 @@ import Navbar from './Navbar'
 import axios from 'axios';
 import {useState} from 'react';
 import React from 'react';
-import {Component} from 'react';
 import Cookies from 'js-cookie';
 
 const Newpost = () => {
