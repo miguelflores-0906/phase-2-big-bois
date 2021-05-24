@@ -8,18 +8,17 @@ const postController = {
 
     newPost: function (req, res) {
 
-        var poster_id = req.body.userid;
+        var poster_username = req.body.poster_username;
         var title = req.body.title;
         var body = req.body.body;
         var board = req.body.board;
         
         var post = {
-            poster_id: poster_id,
+            poster_username: poster_username,
             body: body,
             board: board,
             title: title,
             gamerscore: 0
-            
         }
         console.log(post);
         db.insertOne(Post, post, function(flag){
@@ -40,7 +39,7 @@ const postController = {
 
         var board = req.body.board;
 
-        db.findMany(Post, {board: board}, "poster_id title body gamerscore", function (result) {
+        db.findMany(Post, {board: board}, "poster_username title body gamerscore", function (result) {
             console.log(result);
             res.send(result);
         });
