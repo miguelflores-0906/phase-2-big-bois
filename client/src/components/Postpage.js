@@ -13,7 +13,8 @@ const Postpage = (props) => {
                     id = {props.location.id} 
                     title = {props.location.title}
                     body = {props.location.body}
-                    score = {props.location.score}/>
+                    score = {props.location.score}
+                    username = {props.location.username}/>
             </div>
 
             {/* append replies here */}

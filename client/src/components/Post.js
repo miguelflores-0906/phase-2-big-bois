@@ -31,8 +31,8 @@ const Post = (props) => {
                         id: props.id,
                         title: props.title,
                         body: props.body,
-                        score: props.score
-                        
+                        score: props.score,
+                        username: props.username
                         }}>
                     <div className='proper'>
                         <h2>{props.title}</h2>
