@@ -1,8 +1,8 @@
 import React from 'react'
 import './components.css'
-import { render } from '@testing-library/react';
+// import { render } from '@testing-library/react';
 import { useHistory } from 'react-router-dom';
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 import axios from 'axios';
 import {useState} from 'react';
 import Cookies from 'js-cookie'
@@ -28,7 +28,7 @@ function Loginbtn(Login, error) {
     const registerSubmitHandler = e => {
         e.preventDefault();
         console.log(details);
-        if(details.confirm == details.password)
+        if(details.confirm === details.password)
         {
             changeRegisterError("");
             if(details.username.length >= 8 && details.username.length < 20)
@@ -40,7 +40,7 @@ function Loginbtn(Login, error) {
                     axios.post('http://localhost:5000/checkUser', details)
                      .then(res =>{
                          console.log(res);
-                         if(res.data == "")
+                         if(res.data === "")
                          {
                             changeRegisterError("Register was successful");
                             axios.post('http://localhost:5000/register', details)
@@ -190,38 +190,3 @@ function Loginbtn(Login, error) {
 }
 
 export default Loginbtn
-
-{/* <div className = "container">
-            <div className="bloc-tabs">
-                <button
-                    className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
-                    onClick={() => toggleTab(1)}>
-                    Login
-                </button>
-                <button
-                    className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
-                    onClick={() => toggleTab(2)}>
-                    Register
-                </button>
-            </div>
-
-            <div className="content-tabs">
-                <div
-                    className={toggleState === 1 ? "content  active-content" : "content"}>
-                    username 
-                    <br></br>
-                    <input type="text" className="login-form" id = "loguser"></input> 
-                    <br></br>
-                    <br></br>
-                    password
-                    <br></br>
-                    <input type="text" className="login-form" id = "logpass"></input> 
-
-                </div>
-
-                <div
-                    className={toggleState === 2 ? "content  active-content" : "content"}>
-                        
-                    </div>
-            </div>
-        </div> */}

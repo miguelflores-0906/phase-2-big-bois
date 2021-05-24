@@ -5,9 +5,9 @@ import Navbar from './Navbar'
 import Post from './Post'
 
 
-const profPic = () => {
-    return 
-}
+// const profPic = () => {
+//     return 
+// }
 const Profile = () => {
     
     return (

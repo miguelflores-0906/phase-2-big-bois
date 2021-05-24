@@ -1,5 +1,5 @@
 import React from 'react'
-import { VscWhitespace } from 'react-icons/vsc'
+// import { VscWhitespace } from 'react-icons/vsc'
 import {Link} from 'react-router-dom'
 
 const Navbtn = () => {

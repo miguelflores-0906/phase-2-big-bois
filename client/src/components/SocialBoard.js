@@ -2,13 +2,13 @@ import {FaFeather} from 'react-icons/fa'
 import {Link} from 'react-router-dom'
 import Post from './Post'
 import Navbar from './Navbar'
-const Board = () => {
+const SocialBoard = () => {
     return (
         <div> 
             <Navbar/>
         <div className="board-name">
             <div className="board-header">
-                <h1>BOARD NAME</h1>
+                <h1>SOCIAL</h1>
                 <Link to="/newpost">
                     <div className='new-post'>
                         <FaFeather />
@@ -31,4 +31,4 @@ const Board = () => {
     )
 }
 
-export default Board
+export default SocialBoard

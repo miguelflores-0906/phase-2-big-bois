@@ -1,6 +1,5 @@
 import React from 'react'
 import './components.css'
-import {Link} from 'react-router-dom'
 import Loginbtn from './Loginbtn'
 
 const Login = () => {
