@@ -469,9 +469,11 @@ nav {
       padding: 0;
   }
   
-  /* .posts ul {
-
-  } */
+  .posts li {
+    /* text-decoration: none; */
+    list-style: none;
+    /* width: 100%; */
+  }
 
   .board-post-score {
       padding: 0;
