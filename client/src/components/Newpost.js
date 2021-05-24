@@ -8,7 +8,7 @@ import Cookies from 'js-cookie';
 
 const Newpost = () => {
 
-    const [details, setDetails] = useState({userid: Cookies.get("thegameforum_userLogin"), body: "", board: "general", title: ""});
+    const [details, setDetails] = useState({poster_username: Cookies.get("thegameforum_userLogin"), body: "", board: "general", title: ""});
     const [errorMessage, setErrorMessage] = useState("");
     const changeError = (text) => setErrorMessage(text);
 

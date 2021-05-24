@@ -17,7 +17,7 @@ const TechBoard = () => {
                 title = {post.title}
                 body = {post.body}
                 score = {post.gamerscore}
-                // username = {username}
+                username = {post.poster_username}
             />
         )
     }))
