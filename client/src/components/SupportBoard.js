@@ -15,7 +15,7 @@ const SupportBoard = () => {
             <Post 
                 title = {post.title}
                 body = {post.body}
-                score = {post.score}
+                score = {post.gamerscore}
                 username = {post.poster_username}
             />
         )

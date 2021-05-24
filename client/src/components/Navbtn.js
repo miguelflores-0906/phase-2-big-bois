@@ -1,3 +1,4 @@
+import Cookies from 'js-cookie'
 import React from 'react'
 // import { VscWhitespace } from 'react-icons/vsc'
 import {Link} from 'react-router-dom'
@@ -7,6 +8,11 @@ const Navbtn = () => {
     const navStyle = {
         color: 'white',
         textDecoration: 'none',
+    }
+
+    const logoutUser = () => {
+        Cookies.remove('thegameforum_userLogin',{path: '/'})
+        // console.log('we outty')
     }
 
     return (
@@ -21,7 +27,7 @@ const Navbtn = () => {
                 </Link>
 
                 <Link style={navStyle} to ="/">
-                    <li>LOGOUT</li>
+                    <li onClick={() => logoutUser()}>LOGOUT</li>
                 </Link>
             </ul>
         </nav>
