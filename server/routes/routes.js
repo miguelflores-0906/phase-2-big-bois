@@ -7,11 +7,13 @@ const bodyParser = require('body-parser');
 const registerController = require('../controllers/registerController.js');
 const loginController = require('../controllers/loginController.js');
 const postController = require('../controllers/postController.js');
+const userController = require('../controllers/userController.js');
 
 const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
+
 app.post('/register', registerController.postRegister);
 
 app.post('/login', loginController.postLogin);
@@ -22,7 +24,7 @@ app.post("/newPost", postController.newPost);
 
 app.post("/getPost", postController.getPost);
 
-
+app.post("/findUser", userController.postFindUser);
 
 
 

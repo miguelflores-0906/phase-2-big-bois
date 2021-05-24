@@ -22,6 +22,11 @@ var PostSchema = new Schema(
     {
         type: String,
         required: true
+    },
+    gamerscore:
+    {
+        type: Number,
+        required: true
     }
 });
 

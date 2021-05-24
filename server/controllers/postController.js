@@ -17,7 +17,8 @@ const postController = {
             poster_id: poster_id,
             body: body,
             board: board,
-            title: title
+            title: title,
+            gamerscore: 0
             
         }
         console.log(post);
