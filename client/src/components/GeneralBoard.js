@@ -8,15 +8,25 @@ import React from 'react'
 
 const GeneralBoard = () => {
     
-    // var postArray
+    var postArray
 
+    const [posts, setPosts] = useState("Nothing to see here")
+
+    const updatePosts = () => setPosts(postArray.data.map((post, index) => {
+        return (
+            <Post 
+                title = {post.title}
+                body = {post.body}
+                score = {post.score}
+            />
+        )
+    }))
 
     useEffect(() => {
         axios.post('http://localhost:5000/getPost', {board: "general"})
             .then(res => {
-                console.log(res);
-                // postArray = res; 
-                // postArray = res.map((post, index))
+                postArray = res; 
+                updatePosts()
             })
             .catch(err => {
                 console.error(err);
@@ -39,11 +49,8 @@ const GeneralBoard = () => {
             {/* append or render the posts here */}
             <div className='posts'>
                 <ul>
-                    {
-                        <Post />
-                    }
+                    {posts}
                 </ul>
-                {/* <button onClick={() => test_method()}>press me</button> */}
             </div>
         </div>
         </div>
