@@ -16,6 +16,7 @@ const GeneralBoard = () => {
                 title = {post.title}
                 body = {post.body}
                 score = {post.gamerscore}
+                username = {post.poster_username}
             />
         )
     }))

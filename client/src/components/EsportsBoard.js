@@ -16,6 +16,7 @@ const EsportsBoard = () => {
                 title = {post.title}
                 body = {post.body}
                 score = {post.score}
+                username = {post.poster_username}
             />
         )
     }))
