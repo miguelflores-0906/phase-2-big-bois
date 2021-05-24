@@ -24,7 +24,7 @@ const userController = {
 
         var poster_username = req.body.poster_username;
 
-        db.findMany(Post, {poster_username: poster_username}, "title body gamerscore board", function (result) {
+        db.findMany(Post, {poster_username: poster_username}, null, function (result) {
             console.log(result);
             res.send(result);
         });
