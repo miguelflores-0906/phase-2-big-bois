@@ -25,5 +25,17 @@
         <input type="text" name="_id" placeholder="_id"><br>
         <input type="submit" value="findUser">  
     </form>
+    <h1>newReply</h1>
+    <form method="post" action="/newReply">
+        <input type="text" name="poster_username" placeholder="poster_username"><br>
+        <input type="text" name="title" placeholder="title"><br>
+        <input type="text" name="body" placeholder="body"><br>
+        <input type="submit" value="newReply">  
+    </form>
+    <h1>getUserPosts</h1>
+    <form method="post" action="/getUserPosts">
+        <input type="text" name="poster_username" placeholder="poster_username"><br>
+        <input type="submit" value="getUserPosts">  
+    </form>
 </body>
 </html>
