@@ -1,8 +1,10 @@
+import axios from 'axios'
 import React from 'react'
 import './components.css'
 // import ProfilePicture from '../graphics/profpic.jpg';
 import Navbar from './Navbar'
 import Post from './Post'
+import Cookies from 'js-cookie'
 
 
 // const profPic = () => {
@@ -18,20 +20,22 @@ const Profile = () => {
                 <div className='profile-header'>
                     <div className = 'userName'>
                         {/* TODO: Make this adjust to real Username */}
-                        USERNAME
+                        {Cookies.get("thegameforum_userLogin")}
                     </div>
                     <div className = 'profile-header-dot'>
                         ⋅ 
                     </div>
                     <div className = 'gamerScore'>
-                        1337
+                        {/* {gamerscore} */}
                     </div>
                 </div>
 
                 {/* display the user's posts for the day here */}
                 <div className="profile-posts">
                     <h1>RECENT POSTS</h1>
-                    <Post />
+                    <ul>
+                        {/* {posts} */}
+                    </ul>
                 </div>
                 
                 

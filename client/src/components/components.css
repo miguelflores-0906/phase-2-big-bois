@@ -208,6 +208,10 @@ nav {
     margin-bottom: -20px;
 }
 
+.profile-posts ul li {
+    list-style: none;
+}
+
 .post-page-replies {
     padding: 0px;
 }
