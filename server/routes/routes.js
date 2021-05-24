@@ -8,7 +8,7 @@ const registerController = require('../controllers/registerController.js');
 const loginController = require('../controllers/loginController.js');
 const postController = require('../controllers/postController.js');
 const userController = require('../controllers/userController.js');
-
+const replyController = require('../controllers/replyController.js');
 const app = express();
 
 app.use(cors());
@@ -25,6 +25,13 @@ app.post("/newPost", postController.newPost);
 app.post("/getPost", postController.getPost);
 
 app.post("/findUser", userController.postFindUser);
+
+app.post("/newReply", replyController.newReply);
+
+app.post("/getReply", replyController.getReply);
+
+app.post("/getUserPosts", userController.getUserPosts);
+
 
 
 
