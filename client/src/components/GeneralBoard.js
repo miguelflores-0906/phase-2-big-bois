@@ -2,7 +2,29 @@ import {FaFeather} from 'react-icons/fa'
 import {Link} from 'react-router-dom'
 import Post from './Post'
 import Navbar from './Navbar'
+import axios from 'axios';
+import { useState, useEffect } from 'react'
+import React from 'react'
+
 const GeneralBoard = () => {
+    
+    var postArray
+
+
+    useEffect(() => {
+        axios.post('http://localhost:5000/getPost', {board: "general"})
+            .then(res => {
+                console.log(res);
+                postArray = res; 
+                console.log(postArray)
+            })
+            .catch(err => {
+                console.error(err);
+            })
+    })
+
+    // state = {postArray}
+
     return (
         <div> 
             <Navbar/>
@@ -19,12 +41,18 @@ const GeneralBoard = () => {
             {/* append or render the posts here */}
             <div className='posts'>
                 <ul>
-                    <Post title="This is a title" body="sample body" score="0" username="username"/>
-                    <Post title="This is a title" body="sample body" score="0" username="username"/>
-                    <Post title="This is a title" body="sample body" score="0" username="username"/>
-                    <Post title="This is a title" body="sample body" score="0" username="username"/>
+                    {/* <Post /> */}
+                    {
+                        // this.state.postArray.map((post, index) => {
+                        //     return(
+                        //         <Post 
+                        //             title = {post.title}
+                        //         />
+                        //     )
+                        // })
+                    }
                 </ul>
-                
+                {/* <button onClick={() => test_method()}>press me</button> */}
             </div>
         </div>
         </div>

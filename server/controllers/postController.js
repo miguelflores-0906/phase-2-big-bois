@@ -35,6 +35,8 @@ const postController = {
 
     getPost: function (req, res) {
 
+        console.log(req.body.board)
+
         var board = req.body.board;
 
         db.findMany(Post, {board: board}, "poster_id title body", function (result) {
