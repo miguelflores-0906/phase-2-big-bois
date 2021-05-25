@@ -5,12 +5,13 @@ import './components.css'
 import Navbar from './Navbar'
 import Post from './Post'
 import Cookies from 'js-cookie'
-
+import {useEffect, useState, useParams, useHistory} from 'react'
 
 // const profPic = () => {
 //     return 
 // }
-const Profile = () => {
+const Profile = (props) => {
+    console.log(props.match.params.username)
     
     return (
         <div>
@@ -20,7 +21,8 @@ const Profile = () => {
                 <div className='profile-header'>
                     <div className = 'userName'>
                         {/* TODO: Make this adjust to real Username */}
-                        {Cookies.get("thegameforum_userLogin")}
+                        {/* {Cookies.get("thegameforum_userLogin")} */}
+                        {props.match.params.username}
                     </div>
                     <div className = 'profile-header-dot'>
                         ⋅ 
