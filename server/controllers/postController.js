@@ -45,5 +45,17 @@ const postController = {
         });
     },
 
+    idGetPost: function (req, res) {
+
+        console.log(req.body._id)
+
+        var _id = req.body._id;
+
+        db.findMany(Post, {_id: _id}, null, function (result) {
+            console.log(result);
+            res.send(result);
+        });
+    },
+
 }
 module.exports = postController;

@@ -32,6 +32,8 @@ app.post("/getReply", replyController.getReply);
 
 app.post("/getUserPosts", userController.getUserPosts);
 
+app.post("/idGetPost", postController.idGetPost);
+
 
 
 
