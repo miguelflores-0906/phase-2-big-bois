@@ -27,7 +27,7 @@ const Post = (props) => {
                 </div>
                 <div className='postBody'>
                     <Link style={navStyle} to = {{
-                        pathname: "/postpage",
+                        pathname: `/postpage/${props.id}`,
                         id: props.id,
                         title: props.title,
                         body: props.body,
@@ -40,7 +40,9 @@ const Post = (props) => {
                         <p>{props.body}</p>
                     </div>
                     </Link>
-                    <div className='username'><Link style={navStyle} to ="/profile">
+                    <div className='username'><Link style={navStyle} to = {{
+                        pathname: `/profile/${props.username}`
+                    }}>
                         {props.username}
                     </Link></div>
                     
