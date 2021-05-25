@@ -5,7 +5,6 @@ import './components.css'
 import Navbar from './Navbar'
 import Post from './Post'
 import Cookies from 'js-cookie';
-import axios from 'axios';
 import { useState, useEffect } from 'react'
 
 
@@ -39,6 +38,7 @@ const Profile = () => {
         axios.post('http://localhost:5000/getUserPosts', {username: Cookies.get("thegameforum_userLogin")})
             .then(res => {
                 updatePosts(res)
+                console.log(res)
             })
             .catch(err => {
                 console.error(err);
@@ -81,10 +81,10 @@ const Profile = () => {
                 <div className="profile-posts">
                     <h1>RECENT POSTS</h1>
                     <div className='posts'>
-                <ul>
-                    {posts}
-                </ul>
-            </div>
+                        <ul>
+                            {posts}
+                        </ul>
+                    </div>
                 </div>
                 
                 
