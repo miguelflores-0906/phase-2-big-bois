@@ -11,7 +11,31 @@ import {useEffect, useState, useParams, useHistory} from 'react'
 //     return 
 // }
 const Profile = (props) => {
-    console.log(props.match.params.username)
+    // console.log(props.match.params.username)
+    const user = props.match.params.username
+    const [posts, setPosts] = useState("Nothing to see here")
+
+    const updatePosts = (postArray) => setPosts(postArray.data.map((post, index) => {
+        return (
+            <Post 
+                title = {post.title}
+                body = {post.body}
+                score = {post.gamerscore}
+                username = {post.poster_username}
+                board = "Esports"
+            />
+        )
+    }))
+
+    useEffect(() => {
+        axios.post('http://localhost:5000/getUserPosts', {poster_username: user})
+            .then(res => {
+                updatePosts(res)
+            })
+            .catch(err => {
+                console.error(err);
+            })
+    })
     
     return (
         <div>
@@ -36,6 +60,7 @@ const Profile = (props) => {
                 <div className="profile-posts">
                     <h1>RECENT POSTS</h1>
                     <ul>
+                        {posts}
                         {/* {posts} */}
                     </ul>
                 </div>
