@@ -40,6 +40,8 @@ function App() {
           <Route path="/boards/tech" exact component={TechBoard} />
           <Route path="/boards/rigs" exact component={RigsBoard} />
           <Route path="/boards/support" exact component={SupportBoard} />
+          <Route path="/postpage/:id" component = {Postpage} />
+          <Route path="/profile/:username" component = {Profile} />
         </Switch>
       </div>
     </Router>
