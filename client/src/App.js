@@ -17,7 +17,7 @@ import TabletopBoard from './components/TabletopBoard'
 import TechBoard from './components/TechBoard'
 import RigsBoard from './components/RigsBoard'
 import SupportBoard from './components/SupportBoard'
-
+import Profile_Other from './components/Profile_Other'
 function App() {
   return (
     <Router>
@@ -41,7 +41,7 @@ function App() {
           <Route path="/boards/rigs" exact component={RigsBoard} />
           <Route path="/boards/support" exact component={SupportBoard} />
           <Route path="/postpage/:id" component = {Postpage} />
-          <Route path="/profile/:username" component = {Profile} />
+          <Route path="/profile/:username" component = {Profile_Other} />
         </Switch>
       </div>
     </Router>
