@@ -4,6 +4,8 @@ import Loginbtn from './Loginbtn'
 
 const Login = () => {
 
+    console.log("yo")
+
     return (
         <div>
             <div id = "navbar">
