@@ -32,10 +32,10 @@ const Reply = () => {
         }
     }
     return (
-        <div className="reply-form">
+        <div className="reply-form" onSubmit={submitHandler}>
             <div className="reply">in reply to username</div>
             <div className="errormsg">{errorMessage}</div>
-            <form>
+            <form >
                 <input type="text" placeholder="Enter your reply here" className="post-body" onChange={e => setDetails({...details, body: e.target.value})} value={details.body}></input>
                 <input type="submit" className="reply-btn"></input>
             </form>
