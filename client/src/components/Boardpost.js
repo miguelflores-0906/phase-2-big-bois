@@ -2,7 +2,6 @@
 import {FaArrowUp} from 'react-icons/fa'
 import {FaArrowDown} from 'react-icons/fa'
 import {FaReply} from 'react-icons/fa'
-import {FaTrash} from 'react-icons/fa'
 
 const Boardpost = (props) => {
     console.log(props)
@@ -20,7 +19,6 @@ const Boardpost = (props) => {
                     <div className="board-post-score">0</div>
                     <FaArrowDown />
                     <FaReply />
-                    <FaTrash />
                 </div>
                 {/* <Postbtn /> */}
             </div>

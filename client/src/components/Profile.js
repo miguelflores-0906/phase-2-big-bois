@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React from 'react'
 import './components.css'
 // import ProfilePicture from '../graphics/profpic.jpg';
@@ -6,6 +7,7 @@ import Post from './Post'
 import Cookies from 'js-cookie';
 import axios from 'axios';
 import { useState, useEffect } from 'react'
+
 
 
 // const profPic = () => {
