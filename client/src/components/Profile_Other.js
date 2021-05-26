@@ -13,6 +13,8 @@ const Profile = (props) => {
     // console.log(props.match.params.username)
     const user = props.match.params.username
     const [posts, setPosts] = useState("Nothing to see here")
+    const [gscore, setGScore] = useState("wait")
+    const updateGScore = (score) => setGScore(score)
 
     const updatePosts = (postArray) => setPosts(postArray.data.map((post, index) => {
         return (
@@ -35,6 +37,15 @@ const Profile = (props) => {
             .catch(err => {
                 console.error(err);
             })
+        axios.post('http://localhost:5000/findUser', {username: user})
+            .then(res => {
+                
+                updateGScore(res.data.gscore)
+                
+            })
+            .catch(err =>{
+                console.error(err);
+            })
     })
     
     return (
@@ -52,7 +63,7 @@ const Profile = (props) => {
                         ⋅ 
                     </div>
                     <div className = 'gamerScore'>
-                        {/* {gamerscore} */}
+                        {gscore}
                     </div>
                 </div>
 

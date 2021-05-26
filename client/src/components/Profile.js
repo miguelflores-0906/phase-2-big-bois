@@ -15,6 +15,9 @@ import { useState, useEffect } from 'react'
 const Profile = () => {
 
     const [posts, setPosts] = useState("Nothing to see here")
+    const [gscore, setGScore] = useState("wait")
+
+    const updateGScore = (score) => setGScore(score)
 
     const updatePosts = (postArray) => setPosts(postArray.data.map((post, index) => {
         return (
@@ -37,8 +40,16 @@ const Profile = () => {
             .catch(err => {
                 console.error(err);
             })
+        axios.post('http://localhost:5000/findUser', {username: Cookies.get("thegameforum_userLogin")})
+            .then(res => {
+                
+                updateGScore(res.data.gscore)
+                
+            })
+            .catch(err =>{
+                console.error(err);
+            })
     })
-
 
 
     return (
@@ -48,14 +59,13 @@ const Profile = () => {
 
                 <div className='profile-header'>
                     <div className = 'userName'>
-                        {/* TODO: Make this adjust to real Username */}
                         {Cookies.get("thegameforum_userLogin")}
                     </div>
                     <div className = 'profile-header-dot'>
                         ⋅ 
                     </div>
                     <div className = 'gamerScore'>
-                    {/* {gamerscore} */}
+                        {gscore}
                     </div>
                 </div>
 
