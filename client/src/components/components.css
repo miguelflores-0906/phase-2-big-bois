@@ -484,3 +484,12 @@ nav {
   .board-post-score {
       padding: 0;
   }
+
+  .replies {
+      padding: 0;
+  }
+
+  .replies li {
+      list-style: none;
+      /* text-align: center; */
+  }

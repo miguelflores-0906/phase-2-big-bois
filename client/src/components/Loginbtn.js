@@ -27,7 +27,7 @@ function Loginbtn(Login, error) {
 
     const registerSubmitHandler = e => {
         e.preventDefault();
-        console.log(details);
+        // console.log(details);
         if(details.confirm === details.password)
         {
             changeRegisterError("");
@@ -39,7 +39,7 @@ function Loginbtn(Login, error) {
                     changeRegisterError("");
                     axios.post('http://localhost:5000/checkUser', details)
                      .then(res =>{
-                         console.log(res);
+                        //  console.log(res);
                          if(res.data === "")
                          {
                             changeRegisterError("Register was successful");
@@ -77,7 +77,7 @@ function Loginbtn(Login, error) {
     const loginSubmitHandler = e => {
 
         e.preventDefault();
-        console.log(details);
+        // console.log(details);
         if(details.username.length > 0)
         {
             changeLoginError("");
@@ -86,7 +86,7 @@ function Loginbtn(Login, error) {
                 changeLoginError("");
                 axios.post('http://localhost:5000/login', details)
                      .then(res => {
-                         console.log(res);
+                        //  console.log(res);
                          if (res.data !== "invalid credentials")
                          {
                              Cookies.set("thegameforum_userLogin", details.username, {expires: 1})
@@ -95,7 +95,7 @@ function Loginbtn(Login, error) {
                          else
                          {
                              changeLoginError("Incorrect username or password")
-                             console.log("Invalid credentials");
+                            //  console.log("Invalid credentials");
                          }
                      })
                      .catch(err => {

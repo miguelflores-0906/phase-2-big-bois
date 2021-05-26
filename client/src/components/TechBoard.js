@@ -20,6 +20,7 @@ const TechBoard = () => {
                 username = {post.poster_username}
                 board = {post.board}
                 id = {post._id}
+                key = {index}
             />
         )
     }))

@@ -39,7 +39,6 @@ const Reply = (props) => {
                 <input type="text" placeholder="Enter your reply here" className="post-body" onChange={e => setDetails({...details, body: e.target.value})} value={details.body}></input>
                 <input type="submit" className="reply-btn"></input>
             </form>
-            <p className="cancel">cancel</p>
         </div>
     )
 }

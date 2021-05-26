@@ -2,22 +2,16 @@ import Boardpost from './Boardpost'
 import Boardreply from './Boardreply'
 import Navbar from './Navbar'
 import Reply from './Reply'
-import Post from './Post'
 import {useState, useEffect} from 'react'
-import {FaArrowUp} from 'react-icons/fa'
-import {FaArrowDown} from 'react-icons/fa'
-import {FaReply} from 'react-icons/fa'
-import {FaTrash} from 'react-icons/fa'
-import {Link} from 'react-router-dom'
 import axios from 'axios'
 
 const Postpage = (props) => {
     console.log(props.match.params.id)
 
-    const navStyle = {
-        color: 'black',
-        textDecoration: 'none',
-    }
+    // const navStyle = {
+    //     color: 'black',
+    //     textDecoration: 'none',
+    // }
 
     const id = props.match.params.id
 
@@ -51,7 +45,7 @@ const Postpage = (props) => {
         setBoardname(post.board)
     }
 
-    const [reply, setReply] = useState(
+    const [new_reply, setReply] = useState(
         <Reply op = 'default' />
     )
 
@@ -60,6 +54,21 @@ const Postpage = (props) => {
             <Reply op = {poster_username} />
         )
     }
+
+    const [replies, setReplies] = useState(
+        <li>This post has no replies yet</li>
+    )
+
+    const updateReplies = (repArray) => setReplies(repArray.data.map((rep, index) => {
+        return (
+            <Boardreply 
+                body = {rep.body}
+                poster_username = {rep.poster_username}
+                gamerscore = {rep.gamerscore}
+                key = {index}
+            />
+        )
+    }))
 
     useEffect(() => {
         axios.post('http://localhost:5000/idGetPost', {_id: id})
@@ -73,6 +82,8 @@ const Postpage = (props) => {
             .catch(err => {
                 console.error(err);
             })
+
+        // TODO: get all replies
     })
 
     return (
@@ -87,8 +98,13 @@ const Postpage = (props) => {
 
             {/* append replies here */}
             <div className='post-page-replies'>
-                <Boardreply />
-                {reply}
+                {/* <Boardreply /> */}
+                {new_reply}
+                <div className='posts'>
+                    <ul>
+                        {replies}
+                    </ul>
+                </div>
             </div>
         </div>
     )

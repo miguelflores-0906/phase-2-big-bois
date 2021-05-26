@@ -4,8 +4,7 @@ import './components.css'
 // import ProfilePicture from '../graphics/profpic.jpg';
 import Navbar from './Navbar'
 import Post from './Post'
-import Cookies from 'js-cookie'
-import {useEffect, useState, useParams, useHistory} from 'react'
+import {useEffect, useState} from 'react'
 
 // const profPic = () => {
 //     return 

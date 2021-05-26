@@ -19,6 +19,7 @@ const GeneralBoard = () => {
                 id = {post._id}
                 username = {post.poster_username}
                 board = {post.board}
+                key = {index}
             />
         )
     }))
