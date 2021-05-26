@@ -17,7 +17,8 @@ const SupportBoard = () => {
                 body = {post.body}
                 score = {post.gamerscore}
                 username = {post.poster_username}
-                board = "Support"
+                board = {post.board}
+                id = {post._id}
             />
         )
     }))

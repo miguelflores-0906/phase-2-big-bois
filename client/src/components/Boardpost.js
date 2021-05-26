@@ -2,9 +2,16 @@
 import {FaArrowUp} from 'react-icons/fa'
 import {FaArrowDown} from 'react-icons/fa'
 import {FaReply} from 'react-icons/fa'
+import {Link} from 'react-router-dom'
 
 const Boardpost = (props) => {
-    console.log(props)
+    // console.log(props)
+
+    const navStyle = {
+        color: '#535252',
+        textDecoration: 'none',
+    }
+
     return (
         
         <div className='board-post'>
@@ -13,7 +20,12 @@ const Boardpost = (props) => {
                 {props.body}
             </p>
             <div className='board-post-footer'>
-                <div className='username'>{props.username}</div>
+                <div className='username'><Link style={navStyle} to = {{
+                        pathname: `/profile/${props.username}`
+                    }}>
+                    {props.username}
+                    </Link>
+                </div>
                 <div className='post-btn'>
                     <FaArrowUp />
                     <div className="board-post-score">0</div>

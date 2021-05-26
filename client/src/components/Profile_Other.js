@@ -23,6 +23,7 @@ const Profile = (props) => {
                 score = {post.gamerscore}
                 username = {post.poster_username}
                 board = {post.board}
+                id = {post._id}
             />
         )
     }))

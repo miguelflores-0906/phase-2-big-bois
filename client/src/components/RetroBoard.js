@@ -17,7 +17,8 @@ const RetroBoard = () => {
                 body = {post.body}
                 score = {post.gamerscore}
                 username = {post.poster_username}
-                board = "Retro"
+                board = {post.board}
+                id = {post._id}
             />
         )
     }))

@@ -9,7 +9,7 @@ import {FaArrowDown} from 'react-icons/fa'
 import {FaReply} from 'react-icons/fa'
 import {FaTrash} from 'react-icons/fa'
 import {Link} from 'react-router-dom'
-import axios from 'react'
+import axios from 'axios'
 
 const Postpage = (props) => {
     console.log(props.match.params.id)
@@ -20,10 +20,20 @@ const Postpage = (props) => {
     }
 
     const id = props.match.params.id
-    const [posts, setPosts] = useState("Nothing to see here")
 
-    const updatePosts = (postArray) => setPosts(postArray.data.map((post, index) => {
-        return (
+    const [posts, setPosts] = useState(
+        <Boardpost 
+            id = "Post not rendering correctly"
+            title = "Post not rendering correctly"
+            body = "Post not rendering correctly"
+            score = "Post not rendering correctly"
+            username = "Post not rendering correctly"
+            board = "Post not rendering correctly"
+        />
+    )
+
+    const updatePost = (post) => {
+        setPosts(
             <Boardpost 
                 id = {post._id}
                 title = {post.title}
@@ -31,14 +41,34 @@ const Postpage = (props) => {
                 score = {post.gamerscore}
                 username = {post.poster_username}
                 board = {post.board}
-            />
+        /> 
         )
-    }))
+    }
+
+    const [boardname, setBoardname] = useState("board.name")
+
+    const updateBoardname = (post) => {
+        setBoardname(post.board)
+    }
+
+    const [reply, setReply] = useState(
+        <Reply op = 'default' />
+    )
+
+    const updateReplyUsername = (poster_username) => {
+        setReply(
+            <Reply op = {poster_username} />
+        )
+    }
 
     useEffect(() => {
         axios.post('http://localhost:5000/idGetPost', {_id: id})
             .then(res => {
-                updatePosts(res)
+                updatePost(res.data)
+                updateBoardname(res.data)
+                updateReplyUsername(res.data.poster_username)
+                // console.log(id)
+                // console.log(res)
             })
             .catch(err => {
                 console.error(err);
@@ -49,14 +79,16 @@ const Postpage = (props) => {
         <div>
             <Navbar/>
             <div>
-                <h1 className='board-name'></h1>
+                <h1 className='board-name'>
+                    {boardname}
+                </h1>
                 {posts}
             </div>
 
             {/* append replies here */}
             <div className='post-page-replies'>
                 <Boardreply />
-                <Reply />
+                {reply}
             </div>
         </div>
     )
