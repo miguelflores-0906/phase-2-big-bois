@@ -12,7 +12,7 @@ const Post = (props) => {
     console.log(props)
 
     return (
-        <li>
+        <li key = {props.key}>
             <div className='post'>
                 
                     

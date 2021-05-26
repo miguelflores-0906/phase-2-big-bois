@@ -17,7 +17,9 @@ const SocialBoard = () => {
                 body = {post.body}
                 score = {post.gamerscore}
                 username = {post.poster_username}
-                board = "Social"
+                board = {post.board}
+                id = {post._id}
+                key = {index}
             />
         )
     }))

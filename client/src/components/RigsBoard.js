@@ -17,7 +17,9 @@ const RigsBoard = () => {
                 body = {post.body}
                 score = {post.gamerscore}
                 username = {post.poster_username}
-                board = "Rigs"
+                board = {post.board}
+                id = {post._id}
+                key = {index}
             />
         )
     }))

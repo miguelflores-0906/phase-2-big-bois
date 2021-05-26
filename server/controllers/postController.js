@@ -51,7 +51,7 @@ const postController = {
 
         var _id = req.body._id;
 
-        db.findOne(Post, {username: username}, null, function (result) {
+        db.findOne(Post, {_id: _id}, null, function (result) {
             console.log(result);
             res.send(result);
         });
