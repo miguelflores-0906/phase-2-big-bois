@@ -9,7 +9,7 @@ const Post = (props) => {
         color: 'black',
         textDecoration: 'none',
     }
-    console.log(props)
+    // console.log(props)
 
     return (
         <li key = {props.key}>

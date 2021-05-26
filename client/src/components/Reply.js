@@ -14,7 +14,7 @@ const Reply = (props) => {
         e.preventDefault();
         console.log(details);
         
-        if(details.title.length > 0)
+        if(details.body.length > 0)
         {
             changeError("");
             axios.post('http://localhost:5000/newReply', details)
