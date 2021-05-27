@@ -18,7 +18,6 @@ const Navsearch = () => {
 
     return (
         <input type="text" placeholder="Search" className="search" onKeyPress={handleKeyPress} onChange={e => setKey(e.target.value)}/>
-      
     )
 }
 
