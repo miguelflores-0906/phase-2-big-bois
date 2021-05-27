@@ -61,7 +61,7 @@ const SearchPage = (props) => {
         console.log("yeehaw")
         axios.post('http://localhost:5000/searchPostBody', {expression: keys})
             .then(res => {
-                console.log(res)
+                // console.log(res)
                 if (res.data.length === 0){
                     noSearchResBody()
                 }

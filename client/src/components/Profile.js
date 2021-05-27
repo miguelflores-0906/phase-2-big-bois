@@ -19,7 +19,7 @@ const Profile = () => {
 
     const updateGScore = (score) => setGScore(score)
 
-    const updatePosts = (postArray) => setPosts(postArray.data.map((post, index) => {
+    const updatePosts = (postArray) => setPosts(postArray.data.reverse().map((post, index) => {
         return (
             <Post 
                 title = {post.title}
