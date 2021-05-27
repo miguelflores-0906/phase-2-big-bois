@@ -26,7 +26,7 @@ const SearchPage = (props) => {
         )
     }))
 
-    const updateSearchResBodies = (resArray) => setSearchResBodies(resArray.data.map((post, index) => {
+    const updateSearchResBodies = (resArray) => setSearchResBodies(resArray.data.reverse().map((post, index) => {
         return (
             <Post 
                 title = {post.title}
