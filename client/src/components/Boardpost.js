@@ -1,7 +1,4 @@
-// import Postbtn from './Postbtn'
-import {FaArrowUp} from 'react-icons/fa'
-import {FaArrowDown} from 'react-icons/fa'
-import {FaReply} from 'react-icons/fa'
+
 import {Link} from 'react-router-dom'
 
 const Boardpost = (props) => {

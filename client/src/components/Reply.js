@@ -24,6 +24,8 @@ const Reply = (props) => {
                      .catch(err => {
                      console.error(err);
                      });
+
+            window.location.reload()
         }
         else
         {

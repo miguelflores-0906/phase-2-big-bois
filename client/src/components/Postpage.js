@@ -1,5 +1,5 @@
 import Boardpost from './Boardpost'
-// import Boardreply from './Boardreply'
+import Boardreply from './Boardreply'
 import Navbar from './Navbar'
 import Reply from './Reply'
 import {useState, useEffect} from 'react'
@@ -56,20 +56,20 @@ const Postpage = (props) => {
         )
     }
 
-    // const [replies, setReplies] = useState(
-    //     <li>This post has no replies yet</li>
-    // )
+    const [replies, setReplies] = useState(
+        <li>This post has no replies yet</li>
+    )
 
-    // const updateReplies = (repArray) => setReplies(repArray.data.map((rep, index) => {
-    //     return (
-    //         <Boardreply 
-    //             body = {rep.body}
-    //             poster_username = {rep.poster_username}
-    //             gamerscore = {rep.gamerscore}
-    //             key = {index}
-    //         />
-    //     )
-    // }))
+    const updateReplies = (repArray) => setReplies(repArray.data.map((rep, index) => {
+        return (
+            <Boardreply 
+                body = {rep.body}
+                poster_username = {rep.poster_username}
+                gamerscore = {rep.gamerscore}
+                index = {index}
+            />
+        )
+    }))
 
     useEffect(() => {
         axios.post('http://localhost:5000/idGetPost', {_id: id})
@@ -85,7 +85,15 @@ const Postpage = (props) => {
             Cookies.set("thegameforum_postId", id, {expires: 1})
 
         // TODO: get all replies
-    }, [])
+        axios.post('http://localhost:5000/getReply', {post_id: id})
+            .then(res => {
+                // console.log("I got to here")
+                updateReplies(res)
+            })
+            .catch(err => {
+                console.error(err)
+            })
+    }, [id])
 
     return (
         <div>
@@ -100,12 +108,12 @@ const Postpage = (props) => {
             {/* append replies here */}
             <div className='post-page-replies'>
                 {/* <Boardreply /> */}
-                {new_reply}
                 <div className='posts'>
                     <ul>
-                        {/* {replies} */}
+                        {replies}
                     </ul>
                 </div>
+                {new_reply}
             </div>
         </div>
     )

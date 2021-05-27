@@ -35,9 +35,9 @@ const replyController = {
 
         // console.log(req.body.title)
 
-        var title = req.body.title;
+        var id = req.body.post_id;
 
-        db.findMany(Reply, {title: title}, "poster_username body gamerscore", function (result) {
+        db.findMany(Post, {post_id: id}, "poster_username body gamerscore", function (result) {
             // console.log(result);
             res.send(result);
         });

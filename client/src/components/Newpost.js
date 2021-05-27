@@ -4,8 +4,11 @@ import axios from 'axios';
 import {useState} from 'react';
 import React from 'react';
 import Cookies from 'js-cookie';
+import {useHistory} from 'react-router-dom'
 
 const Newpost = () => {
+
+    const history = useHistory()
 
     const [details, setDetails] = useState({poster_username: Cookies.get("thegameforum_userLogin"), body: "", board: "general", title: ""});
     const [errorMessage, setErrorMessage] = useState("");
@@ -26,6 +29,9 @@ const Newpost = () => {
                      .catch(err => {
                      console.error(err);
                      });
+            
+            history.push({pathname: `/boards/${details.board}`})
+            window.location.reload()
         }
         else
         {

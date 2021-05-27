@@ -47,7 +47,7 @@ const Profile = (props) => {
             .catch(err =>{
                 console.error(err);
             })
-    }, [])
+    }, [user])
     
     return (
         <div>

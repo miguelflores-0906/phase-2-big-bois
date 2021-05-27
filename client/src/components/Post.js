@@ -1,8 +1,5 @@
 import './components.css'
 import {Link} from 'react-router-dom'
-// import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-import {VscChevronUp} from 'react-icons/vsc'
-import {VscChevronDown} from 'react-icons/vsc'
 
 const Post = (props) => {
     const navStyle = {

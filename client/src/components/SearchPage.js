@@ -63,7 +63,7 @@ const SearchPage = (props) => {
             .then(res => {
                 console.log(res)
                 if (res.data.length === 0){
-                    noSearchRes()
+                    noSearchResBody()
                 }
                 else {
                     updateSearchResBodies(res)
