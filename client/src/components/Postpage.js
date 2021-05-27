@@ -6,7 +6,7 @@ import {useState, useEffect} from 'react'
 import axios from 'axios'
 
 const Postpage = (props) => {
-    console.log(props.match.params.id)
+    // console.log(props.match.params.id)
 
     // const navStyle = {
     //     color: 'black',

@@ -32,7 +32,7 @@ const NewsBoard = () => {
             .catch(err => {
                 console.error(err);
             })
-    })
+    }, [])
 
     return (
         <div> 

@@ -32,7 +32,7 @@ const EsportsBoard = () => {
             .catch(err => {
                 console.error(err);
             })
-    })
+    }, [])
 
     return (
         <div> 

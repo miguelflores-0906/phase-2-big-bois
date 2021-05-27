@@ -32,7 +32,7 @@ const RetroBoard = () => {
             .catch(err => {
                 console.error(err);
             })
-    })
+    }, [])
 
     return (
         <div> 

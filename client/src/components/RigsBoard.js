@@ -32,7 +32,7 @@ const RigsBoard = () => {
             .catch(err => {
                 console.error(err);
             })
-    })
+    }, [])
 
     return (
         <div> 

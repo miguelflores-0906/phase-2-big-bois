@@ -35,6 +35,7 @@ const Profile = () => {
     useEffect(() => {
         axios.post('http://localhost:5000/getUserPosts', {poster_username: Cookies.get("thegameforum_userLogin")})
             .then(res => {
+                console.log("y")
                 updatePosts(res)
             })
             .catch(err => {
@@ -49,7 +50,7 @@ const Profile = () => {
             .catch(err =>{
                 console.error(err);
             })
-    })
+    }, [])
 
 
     return (

@@ -32,6 +32,7 @@ const Profile = (props) => {
     useEffect(() => {
         axios.post('http://localhost:5000/getUserPosts', {poster_username: user})
             .then(res => {
+                
                 updatePosts(res)
             })
             .catch(err => {
@@ -46,7 +47,7 @@ const Profile = (props) => {
             .catch(err =>{
                 console.error(err);
             })
-    })
+    }, [])
     
     return (
         <div>

@@ -32,7 +32,7 @@ const SocialBoard = () => {
             .catch(err => {
                 console.error(err);
             })
-    })
+    }, [])
 
     return (
         <div> 

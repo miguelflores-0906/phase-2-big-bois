@@ -18,7 +18,7 @@ const replyController = {
             title: title,
             gamerscore: 0
         }
-        console.log(post);
+        // console.log(post);
         db.insertOne(Post, post, function(flag){
             if(flag){
                 res.send("it worked");
@@ -33,12 +33,12 @@ const replyController = {
 
     getReply: function (req, res) {
 
-        console.log(req.body.title)
+        // console.log(req.body.title)
 
         var title = req.body.title;
 
         db.findMany(Reply, {title: title}, "poster_username body gamerscore", function (result) {
-            console.log(result);
+            // console.log(result);
             res.send(result);
         });
     },
