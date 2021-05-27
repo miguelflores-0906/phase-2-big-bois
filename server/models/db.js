@@ -57,7 +57,7 @@ const database =
         });
     },
 
-    updateOne: function(model, filter, update) 
+    updateOne: function(model, filter, update, callback) 
     {
         model.updateOne(filter, update, function(error, result) 
         {
