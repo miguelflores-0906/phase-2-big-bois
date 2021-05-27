@@ -1,5 +1,5 @@
 import Boardpost from './Boardpost'
-import Boardreply from './Boardreply'
+// import Boardreply from './Boardreply'
 import Navbar from './Navbar'
 import Reply from './Reply'
 import {useState, useEffect} from 'react'
@@ -56,20 +56,20 @@ const Postpage = (props) => {
         )
     }
 
-    const [replies, setReplies] = useState(
-        <li>This post has no replies yet</li>
-    )
+    // const [replies, setReplies] = useState(
+    //     <li>This post has no replies yet</li>
+    // )
 
-    const updateReplies = (repArray) => setReplies(repArray.data.map((rep, index) => {
-        return (
-            <Boardreply 
-                body = {rep.body}
-                poster_username = {rep.poster_username}
-                gamerscore = {rep.gamerscore}
-                key = {index}
-            />
-        )
-    }))
+    // const updateReplies = (repArray) => setReplies(repArray.data.map((rep, index) => {
+    //     return (
+    //         <Boardreply 
+    //             body = {rep.body}
+    //             poster_username = {rep.poster_username}
+    //             gamerscore = {rep.gamerscore}
+    //             key = {index}
+    //         />
+    //     )
+    // }))
 
     useEffect(() => {
         axios.post('http://localhost:5000/idGetPost', {_id: id})
@@ -78,7 +78,6 @@ const Postpage = (props) => {
                 updateBoardname(res.data)
                 updateReplyUsername(res.data.poster_username)
                 // Cookies.set("thegameforum_postTitle", res.data.title, {expires: 1})
-
             })
             .catch(err => {
                 console.error(err);
@@ -104,7 +103,7 @@ const Postpage = (props) => {
                 {new_reply}
                 <div className='posts'>
                     <ul>
-                        {replies}
+                        {/* {replies} */}
                     </ul>
                 </div>
             </div>

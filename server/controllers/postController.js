@@ -57,5 +57,30 @@ const postController = {
         });
     },
 
+    searchPost: function (req, res) {
+        
+        var title = req.body.title
+
+        // console.log(title)
+
+        db.findMany(Post, {title: { $regex: new RegExp(title, "i")}}, "poster_username title body gamerscore", function(result) {
+            // console.log(result);
+            res.send(result)
+        })
+    },
+
+    searchPostBody: function (req, res) {
+
+        var exp = req.body.expression
+
+        console.log("hello")
+        console.log("the key is " + key)
+
+        db.findMany(Post, {body: {$regex: new RegExp(exp, "i")}}, "poster_username title body gamerscore", function(result) {
+            res.send(result)
+        })
+
+    }
+
 }
 module.exports = postController;

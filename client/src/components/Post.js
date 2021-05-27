@@ -16,7 +16,7 @@ const Post = (props) => {
             <div className='post'>
                 
                     
-                <div className='score'>
+                {/* <div className='score'>
                     <VscChevronUp 
                         style = {{cursor: 'pointer', display: 'block', margin: 'auto', width: '30px', height: '30px'}} 
                     />
@@ -24,7 +24,7 @@ const Post = (props) => {
                     <VscChevronDown 
                         style = {{cursor: 'pointer', display: 'block', margin: 'auto', width: '30px', height: '30px'}}
                     />
-                </div>
+                </div> */}
                 <div className='postBody'>
                     <Link style={navStyle} to = {{
                         pathname: `/postpage/${props.id}`,

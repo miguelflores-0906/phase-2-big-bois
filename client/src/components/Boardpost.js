@@ -26,12 +26,6 @@ const Boardpost = (props) => {
                     {props.username}
                     </Link>
                 </div>
-                <div className='post-btn'>
-                    <FaArrowUp />
-                    <div className="board-post-score">0</div>
-                    <FaArrowDown />
-                    <FaReply />
-                </div>
                 {/* <Postbtn /> */}
             </div>
         </div>
