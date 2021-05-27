@@ -28,6 +28,18 @@ var PostSchema = new Schema(
         type: Number,
         default: 0,
         required: true
+    },
+    expireAfterSeconds:
+    {
+        type: Number,
+        default: 20,
+        required: true
+    },
+    createdAt:
+    {
+        type: Date,
+        default: new Date(),
+        required: true
     }
 });
 
