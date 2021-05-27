@@ -2,21 +2,25 @@ var mongoose = require("mongoose");
 
 var ReplySchema = new mongoose.Schema(
 {
-    title:
+    // id of the post to be replied to
+    replying_to: 
     {
         type: String,
         required: true
     },
-    poster_username:
+    // username of the replier
+    replier_username:
     {
         type: String,
         required: true
     },
+    // content of the reply
     body:
     {
         type: String,
         required: true
     },
+    // score of the reply
     gamerscore:
     {
         type: Number,
