@@ -28,6 +28,17 @@ const userController = {
             // console.log(result);
             res.send(result);
         });
+    },
+
+    addGamerscore: function(req, res){
+        var username = req.body.username;
+        db.updateOne(User,{username: username}, {$inc:{gscore: 1}}, function(result){
+            if(result)
+                res.send("gamerscore incremented");
+            else
+                res.send("addGamerscore failed");
+        });
+        
     }
 }
 module.exports = userController;
