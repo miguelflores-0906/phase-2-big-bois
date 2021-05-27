@@ -142,6 +142,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    user-select: none;
 }
 
 .userName{
@@ -206,6 +207,7 @@ nav {
     text-align: center;
     margin-top: 20px;
     margin-bottom: -20px;
+    user-select: none;
 }
 
 .profile-posts ul li {
@@ -226,7 +228,7 @@ nav {
 
 .search-head {
     font-style: bold;
-    font-size: 50px;
+    font-size: 60px;
     text-align: center;
     margin: 15px auto;
     user-select: none;
@@ -516,4 +518,16 @@ nav {
 
   .search-results ul li {
       list-style: none;
+  }
+
+  .search-title {
+      margin: 0 auto;
+      text-align: center;
+      font-size: 48px;
+  }
+
+  .search-body {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 48px;
   }

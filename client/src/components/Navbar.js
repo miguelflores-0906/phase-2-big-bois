@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom'
 const Navbar = () => {
     return (
         <div className='navbar'>
-            <Link style={{textDecoration: 'none', marginTop: '8px'}} to="/postpage">
+            <Link style={{textDecoration: 'none', marginTop: '8px'}} to="/dashboard">
                 <div className="logo">
                     THEGAMEFORUM
                 </div>
