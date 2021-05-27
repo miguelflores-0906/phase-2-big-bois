@@ -73,8 +73,8 @@ const postController = {
 
         var exp = req.body.expression
 
-        console.log("hello")
-        console.log("the key is " + key)
+        // console.log("hello")
+        // console.log("the key is " + exp)
 
         db.findMany(Post, {body: {$regex: new RegExp(exp, "i")}}, "poster_username title body gamerscore", function(result) {
             res.send(result)
