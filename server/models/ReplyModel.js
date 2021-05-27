@@ -22,6 +22,12 @@ var ReplySchema = new mongoose.Schema(
         type: Number,
         required: true,
         default: 0
+    },
+    expiry:
+    {
+        type: Date,
+        default: Date.now,
+        indexes: [{expires: '1440m'}],
     }
 });
 
