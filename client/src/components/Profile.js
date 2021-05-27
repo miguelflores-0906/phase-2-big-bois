@@ -14,6 +14,8 @@ import { useState, useEffect } from 'react'
 // }
 const Profile = () => {
 
+   
+
     const [posts, setPosts] = useState("Nothing to see here")
     const [gscore, setGScore] = useState("wait")
 

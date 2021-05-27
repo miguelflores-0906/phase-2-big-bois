@@ -6,6 +6,11 @@ const Post = (props) => {
         color: 'black',
         textDecoration: 'none',
     }
+
+    const navStyle2 = {
+        color: '#535252',
+        textDecoration: 'none',
+    }
     // console.log(props)
 
     return (
@@ -37,7 +42,7 @@ const Post = (props) => {
                         <p>{props.body}</p>
                     </div>
                     </Link>
-                    <div className='username'><Link style={navStyle} to = {{
+                    <div className='username'><Link style={navStyle2} to = {{
                         pathname: `/profile/${props.username}`
                     }}>
                         {props.username}

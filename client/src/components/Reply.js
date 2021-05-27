@@ -4,8 +4,10 @@ import Cookies from 'js-cookie'
 import {useState} from 'react';
 // this form submits the input to a database to be rendered later on after submission
 const Reply = (props) => {
-
-    const [details, setDetails] = useState({poster_username: Cookies.get("thegameforum_userLogin"), body: "", id: Cookies.get("thegameforum_postId")});
+    const url = window.location.href
+    console.log(url.substring(31, url.length))
+    const postId = url.substring(31, url.length)
+    const [details, setDetails] = useState({poster_username: Cookies.get("thegameforum_userLogin"), body: "", id: postId});
     const [errorMessage, setErrorMessage] = useState("");
     const changeError = (text) => setErrorMessage(text);
 
