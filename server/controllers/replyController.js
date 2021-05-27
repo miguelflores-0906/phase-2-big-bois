@@ -9,13 +9,13 @@ const replyController = {
     newReply: function (req, res) {
 
         var poster_username = req.body.poster_username;
-        var title = req.body.title;
+        var post_id = req.body.id;
         var body = req.body.body;
         
         var post = {
             poster_username: poster_username,
             body: body,
-            title: title,
+            post_id: post_id,
             gamerscore: 0
         }
         // console.log(post);
