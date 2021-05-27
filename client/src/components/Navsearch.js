@@ -3,15 +3,14 @@ import {useHistory} from 'react-router-dom'
 
 const Navsearch = () => {
 
-    const history = useHistory()
+    let history = useHistory()
 
     const [searchKey, setKey] = useState('')
 
     const handleKeyPress = (event) => {
         if (event.key === 'Enter') {
-            console.log(searchKey)
             history.push({
-                pathname: '/search/results',
+                pathname: `/search/results/${searchKey}`,
                 details: searchKey
             })
         }

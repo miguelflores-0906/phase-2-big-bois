@@ -58,9 +58,10 @@ const postController = {
     },
 
     searchPost: function (req, res) {
-        var key = req.body.key
-
-        db.findMany(Post, {title: /key/}, "poster_username title body gamerscore", function(result) {
+        
+        var title = req.body.title
+        db.findMany(Post, {title: /title/}, "poster_username title body gamerscore", function(result) {
+            
             res.send(result)
         })
     }
