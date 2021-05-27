@@ -57,5 +57,14 @@ const postController = {
         });
     },
 
+    searchPost: function (req, res) {
+        
+        var title = req.body.title
+        db.findMany(Post, {title: /title/}, "poster_username title body gamerscore", function(result) {
+            
+            res.send(result)
+        })
+    }
+
 }
 module.exports = postController;
