@@ -31,7 +31,8 @@ const userController = {
     },
 
     addGamerscore: function(req, res){
-        var username = req.body.username;
+        var username = req.body.poster_username;
+        console.log(username);
         db.updateOne(User,{username: username}, {$inc:{gscore: 1}}, function(result){
             if(result)
                 res.send("gamerscore incremented");
