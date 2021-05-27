@@ -4,11 +4,12 @@ import Post from './Post'
 import Navbar from './Navbar'
 
 const SearchPage = (props) => {
-    console.log(props)
     
+    const url = window.location.href
+    const keys = decodeURI(url.substring(37, url.length))
+    console.log(decodeURI(keys))
     const [searchRes, setSearchRes] = useState("No results found")
-    const key = props.location.details
-    console.log(key)
+
     const updateSearchRes = (resArray) => setSearchRes(resArray.data.map((post, index) => {
         return (
             <Post 
@@ -24,15 +25,16 @@ const SearchPage = (props) => {
     }))
 
     useEffect(() => {
-        axios.post('http://localhost:5000/searchPost', {title: key})
+        axios.post('http://localhost:5000/searchPost', {title: keys})
             
             .then(res => {
+               
                 updateSearchRes(res)
             })
             .catch(err => {
                 console.error(err)
             })
-    }, [key])
+    }, [keys])
 
     return (
         <div>
