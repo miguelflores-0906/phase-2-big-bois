@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 // import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import {VscChevronUp} from 'react-icons/vsc'
 import {VscChevronDown} from 'react-icons/vsc'
-import {useToggle} from 'react'
+import {useEffect, useState, useCallback} from 'react'
 
 const Post = (props) => {
     const navStyle = {
@@ -11,22 +11,55 @@ const Post = (props) => {
         textDecoration: 'none',
     }
     // console.log(props)
-    const [toggle, toggleChange] = useToggle()
+    const [count, setCount] = useState(props.score)
+    const [isLiked, setIsLiked] = useState(false);
+    const [isDisliked, setIsDisliked] = useState(false);
 
-    
-        
+    const OnIncrementClick = useCallback((e) => {
+        if(isLiked === false && isDisliked === false){
+            setCount(count+1);
+            setIsLiked(!isLiked);
+        }
+        else if(isLiked === false && isDisliked === true){
+            setCount(count+2);
+            setIsLiked(!isLiked);
+            setIsDisliked(!isDisliked);
+        }
+        else{
+            setCount(count-1);
+            setIsLiked(!isLiked);
+        }
+    }, [count]);
+
+    const OnDecrementClick = useCallback((e) => {
+        if(isDisliked === false && isLiked === false){
+            setCount(count-1);
+            setIsDisliked(!isDisliked);
+        }
+        else if(isDisliked === false && isLiked === true){
+            setCount(count-2);
+            setIsLiked(!isLiked);
+            setIsDisliked(!isDisliked);
+        }
+        else{
+            setCount(count+1);
+            setIsDisliked(!isDisliked);
+        }
+    }, [count])
     return (
         <li key = {props.key}>
             <div className='post'>
                 
                     
                 <div className='score'>
-                    <VscChevronUp 
-                        onClick = {toggleChange}
+                    <VscChevronUp  
+
+                        onClick = {OnIncrementClick} 
                         style = {{cursor: 'pointer', display: 'block', margin: 'auto', width: '30px', height: '30px'}} 
                     />
-                    <p>{toggle ? `${props.score + 1}` : `${props.score - 1}`}</p>
+                    <p>{count}</p>
                     <VscChevronDown 
+                        onClick = {OnDecrementClick}
                         style = {{cursor: 'pointer', display: 'block', margin: 'auto', width: '30px', height: '30px'}}
                     />
                 </div>
