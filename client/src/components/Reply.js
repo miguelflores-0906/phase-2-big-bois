@@ -5,7 +5,7 @@ import {useState} from 'react';
 // this form submits the input to a database to be rendered later on after submission
 const Reply = (props) => {
 
-    const [details, setDetails] = useState({poster_username: Cookies.get("thegameforum_userLogin"), body: "", title: Cookies.get("thegameforum_postTitle")});
+    const [details, setDetails] = useState({poster_username: Cookies.get("thegameforum_userLogin"), body: "", id: Cookies.get("thegameforum_postId")});
     const [errorMessage, setErrorMessage] = useState("");
     const changeError = (text) => setErrorMessage(text);
 

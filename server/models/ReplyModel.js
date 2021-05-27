@@ -2,9 +2,9 @@ var mongoose = require("mongoose");
 
 var ReplySchema = new mongoose.Schema(
 {
-    title:
+    post_id:
     {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId, ref: "Post",
         required: true
     },
     poster_username:

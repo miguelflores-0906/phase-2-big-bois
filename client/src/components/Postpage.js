@@ -77,16 +77,15 @@ const Postpage = (props) => {
                 updatePost(res.data)
                 updateBoardname(res.data)
                 updateReplyUsername(res.data.poster_username)
-                Cookies.set("thegameforum_postTitle", res.data.title, {expires: 1})
-
+                // Cookies.set("thegameforum_postTitle", res.data.title, {expires: 1})
             })
             .catch(err => {
                 console.error(err);
             })
-            
+            Cookies.set("thegameforum_postId", id, {expires: 1})
 
         // TODO: get all replies
-    })
+    }, [])
 
     return (
         <div>
