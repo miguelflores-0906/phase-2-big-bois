@@ -13,12 +13,12 @@ const loginController = {
             username: username,
             password: password,
         }
-        console.log(user);
+        // console.log(user);
         db.findOne(User, user, null ,function(result)
     {
         if(result != null)
         {
-            console.log(result._id);
+            // console.log(result._id);
             res.send(result._id);
         }
             

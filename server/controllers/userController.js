@@ -8,24 +8,24 @@ const userController = {
 
     postFindUser: function (req, res) {
 
-        console.log("in finduser");
+        // console.log("in finduser");
         // var _id = ObjectId(req.body._id);
         var username = req.body.username;
         console.log("objectid assigned");
         db.findOne(User, {username: username}, null, function (result) {
-            console.log(result);
+            // console.log(result);
             res.send(result);
         });
     },
 
     getUserPosts: function (req, res) {
 
-        console.log(req.body.username)
+        // console.log(req.body.username)
 
         var poster_username = req.body.poster_username;
 
         db.findMany(Post, {poster_username: poster_username}, null, function (result) {
-            console.log(result);
+            // console.log(result);
             res.send(result);
         });
     }
