@@ -35,7 +35,6 @@ const Reply = (props) => {
                      console.error(err);
                      });
 
-            window.location.reload()
         }
         else
         {
