@@ -4,6 +4,7 @@ import Navbar from './Navbar'
 import Reply from './Reply'
 import {useState, useEffect} from 'react'
 import axios from 'axios'
+import Cookies from 'js-cookie'
 
 const Postpage = (props) => {
     // console.log(props.match.params.id)
@@ -76,12 +77,13 @@ const Postpage = (props) => {
                 updatePost(res.data)
                 updateBoardname(res.data)
                 updateReplyUsername(res.data.poster_username)
-                // console.log(id)
-                // console.log(res)
+                Cookies.set("thegameforum_postTitle", res.data.title, {expires: 1})
+
             })
             .catch(err => {
                 console.error(err);
             })
+            
 
         // TODO: get all replies
     })
