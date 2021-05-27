@@ -24,12 +24,19 @@ const SearchPage = (props) => {
         )
     }))
 
+    const noSearchRes = () => setSearchRes("No results found")
+
     useEffect(() => {
         axios.post('http://localhost:5000/searchPost', {title: keys})
             
             .then(res => {
-               
-                updateSearchRes(res)
+                console.log(res)
+                if (res.data.length === 0){
+                    noSearchRes()
+                }
+                else {
+                    updateSearchRes(res)
+                }
             })
             .catch(err => {
                 console.error(err)

@@ -60,8 +60,11 @@ const postController = {
     searchPost: function (req, res) {
         
         var title = req.body.title
-        db.findMany(Post, {title: title}, "poster_username title body gamerscore", function(result) {
-            
+
+        console.log(title)
+
+        db.findMany(Post, {title: { $regex: new RegExp(title, "i")}}, "poster_username title body gamerscore", function(result) {
+            console.log(result);
             res.send(result)
         })
     }
