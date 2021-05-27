@@ -34,6 +34,10 @@ app.post("/getUserPosts", userController.getUserPosts);
 
 app.post("/idGetPost", postController.idGetPost);
 
+app.post("/searchPost", postController.searchPost);
+
+app.post("/searchPostBody", postController.searchPost);
+
 
 
 

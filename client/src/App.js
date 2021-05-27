@@ -18,6 +18,7 @@ import TechBoard from './components/TechBoard'
 import RigsBoard from './components/RigsBoard'
 import SupportBoard from './components/SupportBoard'
 import Profile_Other from './components/Profile_Other'
+import SearchPage from './components/SearchPage'
 function App() {
   return (
     <Router>
@@ -42,6 +43,7 @@ function App() {
           <Route path="/boards/support" exact component={SupportBoard} />
           <Route path="/postpage/:id" component = {Postpage} />
           <Route path="/profile/:username" component = {Profile_Other} />
+          <Route path="/search/results" component = {SearchPage} />
         </Switch>
       </div>
     </Router>
