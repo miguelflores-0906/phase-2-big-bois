@@ -22,6 +22,14 @@ const Reply = (props) => {
             axios.post('http://localhost:5000/newReply', details)
                      .then(res => {
                          console.log(res);
+                         axios.post('http://localhost:5000/addGamerscore', details)
+                            .then(res => {
+                                console.log(res);
+                                window.location.reload()
+                            })
+                         .catch(err => {
+                             console.error(err);
+                         });
                      })
                      .catch(err => {
                      console.error(err);
