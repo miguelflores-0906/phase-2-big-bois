@@ -224,6 +224,14 @@ nav {
     user-select: none;
 }
 
+.search-head {
+    font-style: bold;
+    font-size: 50px;
+    text-align: center;
+    margin: 15px auto;
+    user-select: none;
+}
+
 .nav-style {
     color: white;
     text-decoration: none;
@@ -492,4 +500,20 @@ nav {
   .replies li {
       list-style: none;
       /* text-align: center; */
+  }
+
+  .search-results {
+      padding: 0;
+  }
+
+  .search-results ul {
+    font-style: bold;
+    font-size: 50px;
+    text-align: center;
+    margin: 15px auto;
+    user-select: none;
+  }
+
+  .search-results ul li {
+      list-style: none;
   }
