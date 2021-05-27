@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 // import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import {VscChevronUp} from 'react-icons/vsc'
 import {VscChevronDown} from 'react-icons/vsc'
+import {useToggle} from 'react'
 
 const Post = (props) => {
     const navStyle = {
@@ -10,7 +11,10 @@ const Post = (props) => {
         textDecoration: 'none',
     }
     // console.log(props)
+    const [toggle, toggleChange] = useToggle()
 
+    
+        
     return (
         <li key = {props.key}>
             <div className='post'>
@@ -18,9 +22,10 @@ const Post = (props) => {
                     
                 <div className='score'>
                     <VscChevronUp 
+                        onClick = {toggleChange}
                         style = {{cursor: 'pointer', display: 'block', margin: 'auto', width: '30px', height: '30px'}} 
                     />
-                    <p>{props.score}</p>
+                    <p>{toggle ? `${props.score + 1}` : `${props.score - 1}`}</p>
                     <VscChevronDown 
                         style = {{cursor: 'pointer', display: 'block', margin: 'auto', width: '30px', height: '30px'}}
                     />

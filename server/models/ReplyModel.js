@@ -22,6 +22,11 @@ var ReplySchema = new mongoose.Schema(
         type: Number,
         required: true,
         default: 0
+    },
+    replying_to:
+    {
+        type : String,
+        required: true
     }
 });
 
