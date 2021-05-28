@@ -32,7 +32,7 @@ var PostSchema = new Schema(
     expiry:
     {
         type: Date,
-        default: 1,
+        default: Date.now,
         indexes: [{expires: '1440m'}],
     }
 });
