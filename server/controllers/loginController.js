@@ -1,6 +1,8 @@
 const db = require('../models/db.js');
 
 const User = require('../models/UserModel.js');
+const bcrypt = require('bcrypt');
+const saltRounds = 5;
 
 const loginController = {
 
@@ -9,22 +11,27 @@ const loginController = {
         var username = req.body.username;
         var password = req.body.password;
 
-        var user = {
-            username: username,
-            password: password,
-        }
+        // var user = {
+        //     username: username,
+        //     password: password,
+        // }
         // console.log(user);
-        db.findOne(User, user, null ,function(result)
-    {
-        if(result != null)
-        {
-            // console.log(result._id);
-            res.send(result._id);
-        }
+        db.findOne(User, {username, username}, null ,function(result){
+            if(result != null){
+                // console.log(result._id);
+                bcrypt.compare(password, result.password, function(err, equal){
+                    if(equal){
+                        res.send(result._id);
+                    }
+                    else{
+                        res.send("invalid credentials");
+                    }
+                });
+            }
             
-        else
-            res.send("invalid credentials");
-    });
+            else
+                res.send("invalid credentials");
+        });
     }
 }
 module.exports = loginController;

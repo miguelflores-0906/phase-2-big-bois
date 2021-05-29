@@ -17,9 +17,11 @@ function Loginbtn(Login, error) {
 
     const [registerErrorMessage, setRegisterErrorMessage] = useState("");
     const [loginErrorMessage, setLoginErrorMessage] = useState("");
+    const [registerSuccessMessage, setRegisterSuccessMessage] = useState("");
 
     const changeRegisterError = (text) => setRegisterErrorMessage(text);
     const changeLoginError = (text) => setLoginErrorMessage(text);
+    const changeRegisterSuccess = (text) => setRegisterSuccessMessage(text);
 
     var usernameError = "Username should have 8-19 characters";
     var passwordError = "Password should be more than 8 characters";
@@ -42,7 +44,8 @@ function Loginbtn(Login, error) {
                         //  console.log(res);
                          if(res.data === "")
                          {
-                            changeRegisterError("Register was successful");
+                            changeRegisterError("");
+                            changeRegisterSuccess("Registered Successfully");
                             axios.post('http://localhost:5000/register', details)
                              .then(() => console.log('User Registered'))
                              .catch(err => {
@@ -52,6 +55,7 @@ function Loginbtn(Login, error) {
                          else
                          {
                             changeRegisterError("Username already taken");
+                            changeRegisterSuccess("");
                          }
                      })
                      .catch(err => {
@@ -61,11 +65,13 @@ function Loginbtn(Login, error) {
                 else
                 {
                     changeRegisterError(passwordError);
+                    changeRegisterSuccess("");
                 }
             }
             else
             {
                 changeRegisterError(usernameError);
+                changeRegisterSuccess("");
             }
         }
         else
@@ -161,6 +167,7 @@ function Loginbtn(Login, error) {
                     className={toggleState === 2 ? "content  active-content" : "content"}>
                     
                     <p className = "errormsg" >{registerErrorMessage}</p>
+                    <p className = "successmsg">{registerSuccessMessage}</p>
                     <form onSubmit={registerSubmitHandler}>
                     username 
                     <br></br>

@@ -1,6 +1,8 @@
 const db = require('../models/db.js');
 
 const User = require('../models/UserModel.js');
+const bcrypt = require('bcrypt');
+const saltRounds = 5;
 
 const registerController = {
 
@@ -10,16 +12,19 @@ const registerController = {
         var password = req.body.password;
         var gscore = 0;
         
-        var user = {
-            username: username,
-            password: password,
-            gscore: gscore,
-        }
-        console.log(user);
-        db.insertOne(User, user, function(flag){
-            if(flag){
-                res.send("it worked");
+        bcrypt.hash(password, saltRounds, function(err, hash){
+            var user = {
+                username: username,
+                password: hash,
+                gscore: gscore,
             }
+        
+            console.log(user);
+            db.insertOne(User, user, function(flag){
+                if(flag){
+                    res.send("it worked");
+                }
+            });
         });
         
         // db.insertOne(User, user, function(flag) {

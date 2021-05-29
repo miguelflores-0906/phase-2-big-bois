@@ -474,6 +474,12 @@ nav {
     font-size: 20px;
   }
 
+  .successmsg{
+    color: green;
+    text-align: center;
+    font-size: 20px;
+  }
+
   .cancel {
       cursor: pointer;
       text-align: right;
